@@ -174,8 +174,8 @@
                 Inquire
             </a>
 </div>
-<button class="md:hidden text-white" id="nav-toggle" onclick="null">
-<span class="material-symbols-outlined">menu</span>
+<button class="md:hidden text-white transition-colors duration-300" id="nav-toggle">
+    <span id="menu-icon" class="material-symbols-outlined">menu</span>
 </button>
 </div>
 </nav>
@@ -875,25 +875,53 @@ rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 14
         const nav = document.getElementById('navbar');
         const brand = document.getElementById('nav-brand');
         const links = [1,2,3,4].map(i => document.getElementById(`nav-link-${i}`));
+        const mobileIcon = document.getElementById('mobile-menu-icon');
         
-        if (window.scrollY > 100) {
-            nav.classList.add('nav-blur', 'py-4', 'shadow-sm');
-            nav.classList.remove('py-6');
-            brand.classList.replace('text-white', 'text-primary');
-            links.forEach(l => {
-                if(l) l.classList.replace('text-white', 'text-on-surface-variant');
-            });
-            const homeLink = document.getElementById('nav-link-home');
-            const aboutLink = document.getElementById('nav-link-about');
-            if(homeLink) homeLink.classList.replace('text-white', 'text-on-surface-variant');
-            if(aboutLink) aboutLink.classList.replace('text-white', 'text-on-surface-variant');
-        } else {
-            nav.classList.remove('nav-blur', 'py-4', 'shadow-sm');
-            nav.classList.add('py-6');
-            brand.classList.replace('text-primary', 'text-white');
-            links.forEach(l => {
-                if(l) l.classList.replace('text-on-surface-variant', 'text-white');
-            });
+   if (window.scrollY > 100) {
+    nav.classList.add('nav-blur', 'py-4', 'shadow-sm');
+    nav.classList.remove('py-6');
+
+    brand.classList.replace('text-white', 'text-primary');
+
+    links.forEach(l => {
+        if (l) l.classList.replace('text-white', 'text-on-surface-variant');
+    });
+
+    const homeLink = document.getElementById('nav-link-home');
+    const aboutLink = document.getElementById('nav-link-about');
+
+    if(homeLink) homeLink.classList.replace('text-white','text-on-surface-variant');
+    if(aboutLink) aboutLink.classList.replace('text-white','text-on-surface-variant');
+
+    // Change hamburger icon to BLACK
+    if(menuIcon){
+        menuIcon.classList.remove('text-white');
+        menuIcon.classList.add('text-black');
+    }
+
+} else {
+
+    nav.classList.remove('nav-blur','py-4','shadow-sm');
+    nav.classList.add('py-6');
+
+    brand.classList.replace('text-primary','text-white');
+
+    links.forEach(l => {
+        if (l) l.classList.replace('text-on-surface-variant','text-white');
+    });
+
+    const homeLink = document.getElementById('nav-link-home');
+    const aboutLink = document.getElementById('nav-link-about');
+
+    if(homeLink) homeLink.classList.replace('text-on-surface-variant','text-white');
+    if(aboutLink) aboutLink.classList.replace('text-on-surface-variant','text-white');
+
+    // Change hamburger icon back to WHITE
+    if(menuIcon){
+        menuIcon.classList.remove('text-black');
+        menuIcon.classList.add('text-white');
+    }
+};
             const homeLink = document.getElementById('nav-link-home');
             const aboutLink = document.getElementById('nav-link-about');
             if(homeLink) homeLink.classList.replace('text-on-surface-variant', 'text-white');
