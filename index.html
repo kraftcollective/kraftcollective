@@ -978,7 +978,7 @@ rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 14
         <a href="#destinations" class="mobile-nav-link font-headline-lg text-primary text-3xl">Branches</a>
         <a href="#menus" class="mobile-nav-link font-headline-lg text-primary text-3xl">Menus</a>
         <a href="#gallery" class="mobile-nav-link font-headline-lg text-primary text-3xl">Gallery</a>
-        <a href="#journal" class="mobile-nav-link font-headline-lg text-primary text-3xl">Events</a>
+        <a href="#events" class="mobile-nav-link font-headline-lg text-primary text-3xl">Events</a>
     </nav>
     <div class="mt-auto">
         <a href="https://wa.me/918754476660" class="block w-full bg-primary text-white text-center py-4 rounded-xl font-label-sm uppercase tracking-widest shadow-lg">Inquire Now</a>
@@ -1007,8 +1007,26 @@ rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 14
     if (closeBtn) closeBtn.addEventListener('click', () => toggleMenu(false));
     
     links.forEach(link => {
-        link.addEventListener('click', () => toggleMenu(false));
+    link.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+
+        if (href.startsWith('#')) {
+            e.preventDefault();
+
+            toggleMenu(false);
+
+            setTimeout(() => {
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 350);
+        }
     });
+});
 
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) toggleMenu(false);
