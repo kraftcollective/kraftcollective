@@ -157,7 +157,8 @@
 </head>
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- Top Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 transition-all duration-500 py-6 px-gutter" id="navbar">
+<nav id="navbar"
+class="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md transition-all duration-500 py-6 px-gutter">
 <div class="max-w-container-max mx-auto flex justify-between items-center">
 <a class="font-headline-md text-headline-md font-medium tracking-tight text-white transition-colors" href="#" id="nav-brand">
             Kraft Collective</a>
@@ -878,7 +879,12 @@ rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 14
         const mobileIcon = document.getElementById('mobile-menu-icon');
         
  if (window.scrollY > 100) {
-    nav.classList.add('nav-blur', 'py-4', 'shadow-sm');
+    nav.classList.add(
+    'bg-white/95',
+    'backdrop-blur-xl',
+    'shadow-lg',
+    'py-4'
+);
     nav.classList.remove('py-6');
     menuIcon.style.color = "#000";
     brand.classList.replace('text-white', 'text-primary');
@@ -895,7 +901,14 @@ rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 14
 
 } else {
 
-    nav.classList.remove('nav-blur', 'py-4', 'shadow-sm');
+    nav.classList.remove(
+    'bg-white/95',
+    'backdrop-blur-xl',
+    'shadow-lg',
+    'py-4'
+);
+
+nav.classList.add('bg-black/30', 'backdrop-blur-md');
     nav.classList.add('py-6');
     menuIcon.style.color = "#fff";
     brand.classList.replace('text-primary','text-white');
