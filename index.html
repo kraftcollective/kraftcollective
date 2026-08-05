@@ -877,10 +877,10 @@ rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 14
         const links = [1,2,3,4].map(i => document.getElementById(`nav-link-${i}`));
         const mobileIcon = document.getElementById('mobile-menu-icon');
         
-   if (window.scrollY > 100) {
+ if (window.scrollY > 100) {
     nav.classList.add('nav-blur', 'py-4', 'shadow-sm');
     nav.classList.remove('py-6');
-
+    menuIcon.style.color = "#000";
     brand.classList.replace('text-white', 'text-primary');
 
     links.forEach(l => {
@@ -893,22 +893,23 @@ rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 14
     if(homeLink) homeLink.classList.replace('text-white','text-on-surface-variant');
     if(aboutLink) aboutLink.classList.replace('text-white','text-on-surface-variant');
 
-    // Change hamburger icon to BLACK
-    if(menuIcon){
-        menuIcon.classList.remove('text-white');
-        menuIcon.classList.add('text-black');
-    }
-
 } else {
 
-    nav.classList.remove('nav-blur','py-4','shadow-sm');
+    nav.classList.remove('nav-blur', 'py-4', 'shadow-sm');
     nav.classList.add('py-6');
-
+    menuIcon.style.color = "#fff";
     brand.classList.replace('text-primary','text-white');
 
     links.forEach(l => {
         if (l) l.classList.replace('text-on-surface-variant','text-white');
     });
+
+    const homeLink = document.getElementById('nav-link-home');
+    const aboutLink = document.getElementById('nav-link-about');
+
+    if(homeLink) homeLink.classList.replace('text-on-surface-variant','text-white');
+    if(aboutLink) aboutLink.classList.replace('text-on-surface-variant','text-white');
+};
 
     const homeLink = document.getElementById('nav-link-home');
     const aboutLink = document.getElementById('nav-link-about');
