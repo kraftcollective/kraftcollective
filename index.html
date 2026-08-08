@@ -1205,7 +1205,24 @@ function closeWhatsappSelector() {
 }
 
 function openBranchWhatsapp(number) {
-    window.open("https://wa.me/" + number, "_blank");
+
+    let message = "";
+
+    if (number === "9790789760") {
+        message = "Hi Kraft Collective ECR! 👋 I would like to know more about your menu and make a booking.";
+    } 
+    else if (number === "87544 76660") {
+        message = "Hi Kraft Collective Nandanam! 👋 I would like to know more about your menu and make a booking.";
+    } 
+    else if (number === "7358184731") {
+        message = "Hi Kraft Collective KNK! 👋 I would like to know more about your menu and make a booking.";
+    }
+
+    const whatsappURL =
+        "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+
     closeWhatsappSelector();
 }
 
