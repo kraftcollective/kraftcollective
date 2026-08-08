@@ -835,7 +835,8 @@ rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 14
 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
 </svg>
 </a>
-<a onclick="openWhatsappSelector()"
+<button type="button"
+   onclick="openWhatsappSelector()"
    class="bg-primary-container w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform animate-pulse-slow cursor-pointer">
 
 <svg class="lucide lucide-message-circle"
@@ -854,8 +855,7 @@ width="28">
 <path d="M16 12h.01"></path>
 
 </svg>
-
-</a>
+</button>
 </div>
 <!-- WhatsApp Branch Selector -->
 <div id="whatsappPopup"
@@ -1177,7 +1177,6 @@ nav.classList.add('bg-black/30', 'backdrop-blur-md');
     </div>
 </div>
 <script>
-<script>
 function openReelModal(url) {
     const modal = document.getElementById('reel-modal');
     const link = document.getElementById('modal-reel-link');
@@ -1211,4 +1210,5 @@ function openBranchWhatsapp(number) {
 }
 
 </script>
-</script></body></html>
+</body>
+</html>
