@@ -835,9 +835,62 @@ rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 14
 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
 </svg>
 </a>
-<a class="bg-primary-container w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform animate-pulse-slow" href="https://wa.me/918754476660">
-<svg class="lucide lucide-message-circle" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path><path d="M8 12h.01"></path><path d="M12 12h.01"></path><path d="M16 12h.01"></path></svg>
+<a onclick="openWhatsappSelector()"
+   class="bg-primary-container w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform animate-pulse-slow cursor-pointer">
+
+<svg class="lucide lucide-message-circle"
+fill="none"
+height="28"
+stroke="currentColor"
+stroke-linecap="round"
+stroke-linejoin="round"
+stroke-width="2"
+viewBox="0 0 24 24"
+width="28">
+
+<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+<path d="M8 12h.01"></path>
+<path d="M12 12h.01"></path>
+<path d="M16 12h.01"></path>
+
+</svg>
+
 </a>
+</div>
+<!-- WhatsApp Branch Selector -->
+<div id="whatsappPopup"
+     class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[999]">
+
+    <div class="bg-white rounded-2xl p-6 w-80 shadow-2xl">
+
+        <h3 class="text-xl font-bold mb-4 text-center">
+            Choose Your Branch
+        </h3>
+
+        <div class="flex flex-col gap-3">
+
+            <button onclick="openBranchWhatsapp('9790789760')"
+                    class="w-full bg-[#3E5C3A] text-white py-3 rounded-xl hover:opacity-90">
+                📍 ECR
+            </button>
+
+            <button onclick="openBranchWhatsapp('8754476660')"
+                    class="w-full bg-[#3E5C3A] text-white py-3 rounded-xl hover:opacity-90">
+                📍 Nandanam
+            </button>
+
+            <button onclick="openBranchWhatsapp('7358184731')"
+                    class="w-full bg-[#3E5C3A] text-white py-3 rounded-xl hover:opacity-90">
+                📍 KNK
+            </button>
+
+            <button onclick="closeWhatsappSelector()"
+                    class="w-full mt-2 border py-3 rounded-xl">
+                Cancel
+            </button>
+
+        </div>
+    </div>
 </div>
 <script>
     // Menu Swapping Logic
@@ -1124,6 +1177,7 @@ nav.classList.add('bg-black/30', 'backdrop-blur-md');
     </div>
 </div>
 <script>
+<script>
 function openReelModal(url) {
     const modal = document.getElementById('reel-modal');
     const link = document.getElementById('modal-reel-link');
@@ -1131,9 +1185,30 @@ function openReelModal(url) {
     modal.classList.remove('opacity-0', 'pointer-events-none');
     document.body.style.overflow = 'hidden';
 }
+
 function closeReelModal() {
     const modal = document.getElementById('reel-modal');
     modal.classList.add('opacity-0', 'pointer-events-none');
     document.body.style.overflow = '';
 }
+
+
+/* WhatsApp Branch Selector */
+
+function openWhatsappSelector() {
+    document.getElementById("whatsappPopup").classList.remove("hidden");
+    document.getElementById("whatsappPopup").classList.add("flex");
+}
+
+function closeWhatsappSelector() {
+    document.getElementById("whatsappPopup").classList.remove("flex");
+    document.getElementById("whatsappPopup").classList.add("hidden");
+}
+
+function openBranchWhatsapp(number) {
+    window.open("https://wa.me/" + number, "_blank");
+    closeWhatsappSelector();
+}
+
+</script>
 </script></body></html>
