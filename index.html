@@ -936,7 +936,7 @@ width="28">
         const nav = document.getElementById('navbar');
         const brand = document.getElementById('nav-brand');
         const links = [1,2,3,4].map(i => document.getElementById(`nav-link-${i}`));
-        const mobileIcon = document.getElementById('mobile-menu-icon');
+        const menuIcon = document.getElementById('nav-toggle');
         
  if (window.scrollY > 100) {
     nav.classList.add(
@@ -946,7 +946,7 @@ width="28">
     'py-4'
 );
     nav.classList.remove('py-6');
-    menuIcon.style.color = "#000";
+    if (menuIcon) menuIcon.style.color = "#000";
     brand.classList.replace('text-white', 'text-primary');
 
     links.forEach(l => {
@@ -970,7 +970,7 @@ width="28">
 
 nav.classList.add('bg-black/30', 'backdrop-blur-md');
     nav.classList.add('py-6');
-    menuIcon.style.color = "#fff";
+    if (menuIcon) menuIcon.style.color = "#fff";
     brand.classList.replace('text-primary','text-white');
 
     links.forEach(l => {
@@ -982,25 +982,7 @@ nav.classList.add('bg-black/30', 'backdrop-blur-md');
 
     if(homeLink) homeLink.classList.replace('text-on-surface-variant','text-white');
     if(aboutLink) aboutLink.classList.replace('text-on-surface-variant','text-white');
-};
-
-    const homeLink = document.getElementById('nav-link-home');
-    const aboutLink = document.getElementById('nav-link-about');
-
-    if(homeLink) homeLink.classList.replace('text-on-surface-variant','text-white');
-    if(aboutLink) aboutLink.classList.replace('text-on-surface-variant','text-white');
-
-    // Change hamburger icon back to WHITE
-    if(menuIcon){
-        menuIcon.classList.remove('text-black');
-        menuIcon.classList.add('text-white');
-    }
-};
-            const homeLink = document.getElementById('nav-link-home');
-            const aboutLink = document.getElementById('nav-link-about');
-            if(homeLink) homeLink.classList.replace('text-on-surface-variant', 'text-white');
-            if(aboutLink) aboutLink.classList.replace('text-on-surface-variant', 'text-white');
-        }
+}
 
         const heroBg = document.getElementById('hero-bg');
         let offset = window.pageYOffset;
