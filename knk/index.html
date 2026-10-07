@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-
-<html class="scroll-smooth" lang="en" style=""><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>The Brunch Theory | Kraft Collective - KNK Road, Chennai</title>
 <!-- Google Fonts: EB Garamond (Serif Display) and Inter (Sans Clean) -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <!-- Tailwind CSS CDN with plugins -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Tailwind Config -->
@@ -79,6 +77,15 @@
       margin: 0 0.6rem 0.3rem 0.6rem;
     }
 
+    /* Hide scrollbar for category tabs */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
     /* Respect reduced motion preference */
     @media (prefers-reduced-motion: reduce) {
       .ticker-track {
@@ -129,10 +136,10 @@
     </a>
 <!-- Hamburger Button for Mobile -->
 <button aria-controls="mobile-nav-menu" aria-expanded="false" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-lg text-stone-700 hover:text-brand-olive hover:bg-stone-200/50 focus:outline-none focus:ring-2 focus:ring-brand-olive transition-colors" id="mobile-menu-btn" type="button">
-<svg class="w-6 h-6 block" fill="none" id="hamburger-icon" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6 block" fill="none" id="hamburger-icon" stroke="currentColor" viewBox="0 0 24 24">
 <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
-<svg class="w-6 h-6 hidden" fill="none" id="close-icon" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6 hidden" fill="none" id="close-icon" stroke="currentColor" viewBox="0 0 24 24">
 <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </button>
@@ -158,7 +165,7 @@
 <section class="relative pt-24 min-h-[92vh] flex flex-col justify-between overflow-hidden" id="home">
 <!-- Background Image with Overlay -->
 <div class="absolute inset-0 z-0">
-<img alt="The Brunch Theory Dining Atmosphere" class="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Y7y17oRNsGzCmB-WHcVa-6DpzJK_L1LRLmByvQjeyjBRkoTjBwxb_Z8s_X6rMmOTLirGdAdY5Mg8Phc9DVF-gG21yVuC4NeCEQFDYa2GQp-38ibVwodOrUQ5T0Tw4wgj-tJliHePRFmFUG1zntr6Se8sbCXs9qfbqR0euVjktLPOAajmwNwdf9Cq30_epxyIe_q0Cgk89u04BsXT9QO7IAFHSeZpiAPuLNAwHt0LO9UBeUWxB45z0Ox4Td3vy2FSzf1lu3SuaGiy9Q"/>
+<img alt="The Brunch Theory Dining Atmosphere" class="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Y7y17oRNsGzCmB-WHcVa-6DpzJK_L1LRLmByvQjeyjBRkoTjBwxb_Z8s_X6rMmOTLirGdAdY5Mg8Phc9DVF-gG21yVuC4NeCEQFDYa2GQp-38ibVwodOrUQ5T0Tw4wgj-tJliHePRFmFUG1zntr6Se8sbCXs9qfbqR0euVjktLPOAajmwNwdf9Cq30_epxyIe_q0Cgk89u04BsXT9QO7IAFHSeZpiAPuLNAwHt0LO9UBeUWxB45z0Ox4Td3vy2FSzf1lu3SuaGiy9Q">
 <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/65 to-stone-950/60"></div>
 </div>
 <!-- Main Hero Content -->
@@ -260,7 +267,7 @@
 <div class="lg:col-span-6">
 <div class="relative group">
 <div class="overflow-hidden rounded-2xl shadow-2xl aspect-[4/3] bg-stone-200 cursor-pointer">
-<img alt="Artisanal Farm Eggs Benedict with micro-greens" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9nyeyvH_3WaTD94unxwFT34aHa29AX_JJ5F8FK88ml8LXMPgMU6uyRdOUqLu4wu6Ex9GdRQ1b6vp7j2ECt7gkZ_oTHTJAa8Kj-Hcu5FZ9eZiZwmD0JlNAN-p8fNRuqLlb7XbYxrfZK5OL3TSd9K-ndl3hSjJNhN_PKSE2aA6aTknm3xo0lCLa9LsLuSzwOpen4xGpxQTHpukoSeWFieoT6ZASgECu688Sw5cXS6UVFrC8nOKRsRbozGsOsak0MP0pEhCfX0rBIIuuSA"/>
+<img alt="Artisanal Farm Eggs Benedict with micro-greens" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9nyeyvH_3WaTD94unxwFT34aHa29AX_JJ5F8FK88ml8LXMPgMU6uyRdOUqLu4wu6Ex9GdRQ1b6vp7j2ECt7gkZ_oTHTJAa8Kj-Hcu5FZ9eZiZwmD0JlNAN-p8fNRuqLlb7XbYxrfZK5OL3TSd9K-ndl3hSjJNhN_PKSE2aA6aTknm3xo0lCLa9LsLuSzwOpen4xGpxQTHpukoSeWFieoT6ZASgECu688Sw5cXS6UVFrC8nOKRsRbozGsOsak0MP0pEhCfX0rBIIuuSA">
 </div>
 </div>
 </div>
@@ -460,7 +467,7 @@
 </div>
 <!-- Hero Sized Interior Photograph -->
 <div class="overflow-hidden rounded-3xl shadow-xl aspect-[16/9] lg:aspect-[21/9] bg-stone-300 group cursor-pointer">
-<img alt="Warm architectural restaurant interior at KNK Road" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZLCPy__-PkSyphtIy9MfuVtNvttpxw78YJjwY2ZPz7i-ai4ya8rKtP4VtNimbYUlrggVs6UKBtlCNBnG6T3Vw90Zeecdw0WyIYSrsCJb2fBlfxCHwZ701RYnplm0R91iibBofAIn278mnBwZurm46NkzlmGsVQzdkPM_cQ3bpkXb5SnGblsghcwML2cwMc2EeLVM52zsWxmwvo8q3B8mKrNobIbqGhHcqeFC0pqGB9svRxmL2zzV20Rr22paQAWHqzuJxq3Ley3ypgg"/>
+<img alt="Warm architectural restaurant interior at KNK Road" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZLCPy__-PkSyphtIy9MfuVtNvttpxw78YJjwY2ZPz7i-ai4ya8rKtP4VtNimbYUlrggVs6UKBtlCNBnG6T3Vw90Zeecdw0WyIYSrsCJb2fBlfxCHwZ701RYnplm0R91iibBofAIn278mnBwZurm46NkzlmGsVQzdkPM_cQ3bpkXb5SnGblsghcwML2cwMc2EeLVM52zsWxmwvo8q3B8mKrNobIbqGhHcqeFC0pqGB9svRxmL2zzV20Rr22paQAWHqzuJxq3Ley3ypgg">
 </div>
 </div>
 </section>
@@ -482,7 +489,7 @@
 </span>
 </div>
 <!-- 3-Image Showcase Grid with Lightbox Triggers -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"><div class="overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 shadow-md cursor-default"><img alt="Plated honey honeycomb dessert patisserie" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmF3myhmHei73WkxSg-OIUpp7gpjOG06cmN55oYxdb7wto2bsJkPh4dRf68h6bDEgK0PrB-ccdtOBck6ejpr9U_bJjNeN7TYVXZzdTI0WVvSmgR2NaStRfAdUnkXnHnyI3qycRvW4osqUxSX7KpaI788C3r4NlOGku3Vl_SIc56dmxIIypCSLIkOL-P6gagQX8Kka8Gr2hihLgE4SCLfSDh6kdGMzoZoQI9CTyGX3zLTusepaaakyQQHcrxhwb76jKFqhgdoG1SPl53g"/></div><div class="overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 shadow-md cursor-default"><img alt="Backlit shelves and warm restaurant design details" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhDG5_6A62oIQup5cTg7CPhojRBCT3VyQgCpz7rIR67gzZaaBKElPRTCmsbcaJNHzSJxkUkKNVcA9ZLSJpKB1D5n3Xs1Jty5cR-ePfMahBsRALQ44kNiloOmF6IwCWHn54YaOwNqynOuY7BH3wz4SBnkdb1crFOg2EsQJVmAPnZZU-0apFPDJ8qj0v4UB-gVXMDIS09SQeiFQRUExfaCZXrN6_7Fg5ZC11xKb4lyx5qNBLEYE2rEWMpVb4ynEHjROUfIFWOhuRDsDIag"/></div><div class="overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 shadow-md cursor-default"><img alt="Refreshing layered craft mocktail drink" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGoUyfC9P82lewPh_9mwgE_CAFMxhoKW7YauAjqi7_gLc6z_-ERhAFkWLztRel7FhL7ETma2SxL5rjHuih-8Y4xsysGv-qKMJu_8kgXy6P0DbDYALzvNheuaZZBQAH6TpRFtAIWT7WuXlPPkeC3KOcnLMYYm8WB2H-SWGYY8z0l_1dpzb2KNKiFyLTHcZ0mkhC6NGZuW8aEwwjTyFv0qQaWHAz9Dx1PKRoa7DrkD4Pfhagsx1eina3VobnsKJw9WEGCfItycEtZBOMDA"/></div></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"><div class="overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 shadow-md cursor-default"><img alt="Plated honey honeycomb dessert patisserie" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmF3myhmHei73WkxSg-OIUpp7gpjOG06cmN55oYxdb7wto2bsJkPh4dRf68h6bDEgK0PrB-ccdtOBck6ejpr9U_bJjNeN7TYVXZzdTI0WVvSmgR2NaStRfAdUnkXnHnyI3qycRvW4osqUxSX7KpaI788C3r4NlOGku3Vl_SIc56dmxIIypCSLIkOL-P6gagQX8Kka8Gr2hihLgE4SCLfSDh6kdGMzoZoQI9CTyGX3zLTusepaaakyQQHcrxhwb76jKFqhgdoG1SPl53g"></div><div class="overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 shadow-md cursor-default"><img alt="Backlit shelves and warm restaurant design details" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhDG5_6A62oIQup5cTg7CPhojRBCT3VyQgCpz7rIR67gzZaaBKElPRTCmsbcaJNHzSJxkUkKNVcA9ZLSJpKB1D5n3Xs1Jty5cR-ePfMahBsRALQ44kNiloOmF6IwCWHn54YaOwNqynOuY7BH3wz4SBnkdb1crFOg2EsQJVmAPnZZU-0apFPDJ8qj0v4UB-gVXMDIS09SQeiFQRUExfaCZXrN6_7Fg5ZC11xKb4lyx5qNBLEYE2rEWMpVb4ynEHjROUfIFWOhuRDsDIag"></div><div class="overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 shadow-md cursor-default"><img alt="Refreshing layered craft mocktail drink" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGoUyfC9P82lewPh_9mwgE_CAFMxhoKW7YauAjqi7_gLc6z_-ERhAFkWLztRel7FhL7ETma2SxL5rjHuih-8Y4xsysGv-qKMJu_8kgXy6P0DbDYALzvNheuaZZBQAH6TpRFtAIWT7WuXlPPkeC3KOcnLMYYm8WB2H-SWGYY8z0l_1dpzb2KNKiFyLTHcZ0mkhC6NGZuW8aEwwjTyFv0qQaWHAz9Dx1PKRoa7DrkD4Pfhagsx1eina3VobnsKJw9WEGCfItycEtZBOMDA"></div></div>
 </div>
 </section>
 <!-- END: VisualChronicle -->
@@ -493,7 +500,7 @@
   Bespoke Gatherings
 </span>
 <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight mb-6">
-  Got The Occasion?<br/>We’ve Got The Space.
+  Got The Occasion?<br>We’ve Got The Space.
 </h2>
 <p class="text-stone-300 font-light text-base lg:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
   Whether you are planning an intimate birthday dinner, an anniversary celebration, corporate luncheons, or a private culinary workshop, our dedicated hospitality team curates unforgettable tailored moments on KNK.
@@ -574,7 +581,7 @@
 </h2>
 <div class="space-y-5 text-sm text-stone-600 font-normal">
 <div class="flex items-start space-x-3">
-<svg class="w-5 h-5 text-brand-olive shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+<svg class="w-5 h-5 text-brand-olive shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
 <div>
 <strong class="font-medium text-brand-charcoal block">The Brunch Theory - KNK</strong>
 <a class="hover:text-brand-olive transition-colors underline decoration-stone-300" href="https://www.google.com/maps/search/?api=1&amp;query=The+Brunch+Theory+2F+11+Khader+Nawaz+Khan+Road+Chennai+Tamil+Nadu+600006" rel="noopener noreferrer" target="_blank">
@@ -583,15 +590,15 @@
 </div>
 </div>
 <div class="flex items-start space-x-3">
-<svg class="w-5 h-5 text-brand-olive shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+<svg class="w-5 h-5 text-brand-olive shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
 <div class="">
 <strong class="font-medium text-brand-charcoal block">Operating Hours</strong>
-  Monday – Sunday: 11:00 AM – 11:00 PM<br/>
+  Monday – Sunday: 11:00 AM – 11:00 PM<br>
 <span class="text-stone-500 text-xs">Complimentary valet parking available</span>
 </div>
 </div>
 <div class="flex items-start space-x-3">
-<svg class="w-5 h-5 text-brand-olive shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+<svg class="w-5 h-5 text-brand-olive shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
 <div>
 <strong class="font-medium text-brand-charcoal block">Concierge &amp; Reservations</strong>
 <a class="hover:underline font-medium text-brand-olive" href="tel:+918754476660">+91 87544 76660</a>
@@ -615,7 +622,7 @@
 <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#3e5338_1px,transparent_1px)] [background-size:16px_16px] group-hover:scale-105 transition-transform duration-500"></div>
 <div class="relative bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl max-w-sm w-full border border-stone-100 group-hover:scale-102 transition-transform duration-300">
 <div class="w-12 h-12 bg-brand-olive/10 text-brand-olive rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-brand-olive group-hover:text-white transition-colors duration-300">
-<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path></svg>
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path></svg>
 </div>
 <h4 class="font-serif text-lg font-semibold text-brand-charcoal">The Brunch Theory</h4>
 <p class="text-xs text-stone-500 mt-1 mb-4">11, Khader Nawaz Khan Rd, Nungambakkam</p>
@@ -633,7 +640,7 @@
 <!-- BEGIN: FinalCTA -->
 <section class="relative py-28 overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img alt="Warm evening restaurant table" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy3-btYFYLl3fYgnZ0fL3shWaDjxM6efLL1qoRX_zOXyM7smus2gG3eOmwDbvSxdm3Yrq5OeFcSn1HwKiM0iyQAlyTe1DWWrU7gJMjSuLShS86PMn0DWqQjcQ0TSa2jzTjgW1nja5o8W2GBV4HKavFv0NcwYrgxA0fKTVOoXdhICf4aUNu3nt_n8m5yDBivq3lRksichckiqzX_O6_9Di7C_yRLPTFaCtH8jkE1TlnTe-GIyFdrf5Xe4ZQY5OStjviQav9Fdhv6wvVNQ"/>
+<img alt="Warm evening restaurant table" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy3-btYFYLl3fYgnZ0fL3shWaDjxM6efLL1qoRX_zOXyM7smus2gG3eOmwDbvSxdm3Yrq5OeFcSn1HwKiM0iyQAlyTe1DWWrU7gJMjSuLShS86PMn0DWqQjcQ0TSa2jzTjgW1nja5o8W2GBV4HKavFv0NcwYrgxA0fKTVOoXdhICf4aUNu3nt_n8m5yDBivq3lRksichckiqzX_O6_9Di7C_yRLPTFaCtH8jkE1TlnTe-GIyFdrf5Xe4ZQY5OStjviQav9Fdhv6wvVNQ">
 <div class="absolute inset-0 bg-stone-950/80"></div>
 </div>
 <div class="relative z-10 max-w-3xl mx-auto px-6 text-center text-white">
@@ -641,7 +648,7 @@
   Reserve In Advance
 </span>
 <h2 class="font-serif text-4xl sm:text-6xl font-normal leading-tight mb-6">
-  Come For The Brunch.<br/>Stay For The Experience.
+  Come For The Brunch.<br>Stay For The Experience.
 </h2>
 <p class="text-stone-300 font-light text-base sm:text-lg mb-8 max-w-xl mx-auto">
   Join us for your next breakfast gathering, golden-hour date, or festive group dinner on KNK Road.
@@ -690,7 +697,7 @@
 <div>
 <h5 class="text-brand-charcoal font-semibold uppercase text-[11px] tracking-wider mb-4">Concierge</h5>
 <ul class="space-y-2 text-stone-500">
-<li class=""><a class="hover:text-brand-olive transition-colors" href="https://maps.google.com/?q=The+Brunch+Theory+Khader+Nawaz+Khan+Road+Chennai" rel="noopener noreferrer" target="_blank">11 Khader Nawaz Khan Road,<br/>Nungambakkam, Chennai</a></li>
+<li class=""><a class="hover:text-brand-olive transition-colors" href="https://maps.google.com/?q=The+Brunch+Theory+Khader+Nawaz+Khan+Road+Chennai" rel="noopener noreferrer" target="_blank">11 Khader Nawaz Khan Road,<br>Nungambakkam, Chennai</a></li>
 <li class="pt-2">
 <a class="font-semibold text-brand-olive hover:underline block" href="tel:+918754476660">+91 87544 76660</a>
 </li>
@@ -718,50 +725,50 @@
 </footer>
 <!-- END: Footer -->
 <!-- Floating Quick Actions (WhatsApp & Call) -->
-<aside aria-label="Social Links" class="fixed bottom-8 right-8 z-[100]"><a aria-label="Follow The Brunch Theory on Instagram" class="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform group backdrop-blur-sm" href="https://www.instagram.com/thebrunchtheory/" id="floating-instagram-btn" rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 148, 51, 0.8) 0%, rgba(230, 104, 60, 0.8) 25%, rgba(220, 39, 67, 0.8) 50%, rgba(204, 35, 102, 0.8) 75%, rgba(188, 24, 136, 0.8) 100%); border: 1px solid rgba(255, 255, 255, 0.3);" target="_blank" title="Follow on Instagram"><svg class="group-hover:rotate-12 transition-transform" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a></aside>
+<aside aria-label="Social Links" class="fixed bottom-8 right-8 z-[100]"><a aria-label="Follow The Brunch Theory on Instagram" class="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform group backdrop-blur-sm" href="https://www.instagram.com/thebrunchtheory/" id="floating-instagram-btn" rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 148, 51, 0.8) 0%, rgba(230, 104, 60, 0.8) 25%, rgba(220, 39, 67, 0.8) 50%, rgba(204, 35, 102, 0.8) 75%, rgba(188, 24, 136, 0.8) 100%); border: 1px solid rgba(255, 255, 255, 0.3);" target="_blank" title="Follow on Instagram"><svg class="group-hover:rotate-12 transition-transform" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a></aside>
 <!-- ======================================================== -->
 <!-- INTERACTIVE MODAL: Full Seasonal Menu                    -->
 <!-- ======================================================== -->
 <div aria-labelledby="menu-modal-title" aria-modal="true" class="fixed inset-0 z-50 overflow-y-auto bg-stone-950/70 backdrop-blur-sm p-4 sm:p-6 flex items-center justify-center transition-all duration-300 hidden" id="menu-modal" role="dialog">
 <div class="relative bg-[#FAF8F5] w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden border border-stone-300 my-8 max-h-[90vh] flex flex-col">
 <!-- Header -->
-<div class="px-6 sm:px-10 py-6 border-b border-stone-200 flex items-center justify-between bg-[#F5F2ED]">
+<div class="px-6 sm:px-10 py-6 border-b border-stone-200 flex items-center justify-between bg-[#F5F2ED] shrink-0">
 <div>
 <span class="text-brand-olive text-[11px] font-bold uppercase tracking-widest block">Crafted Flavours</span>
 <h3 class="font-serif text-2xl sm:text-3xl text-brand-charcoal" id="menu-modal-title">Complete Seasonal Menu</h3>
 </div>
 <button aria-label="Close Menu Modal" class="text-stone-500 hover:text-stone-900 p-2 rounded-full hover:bg-stone-200 transition-colors" id="close-menu-modal" type="button">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </button>
 </div>
-<!-- Category Filter Tabs -->
-<div class="px-6 sm:px-10 pt-4 pb-2 border-b border-stone-200 overflow-x-auto no-scrollbar flex space-x-4 text-xs font-semibold uppercase tracking-wider">
-<button class="menu-tab text-brand-olive border-b-2 border-brand-olive pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-all" type="button">All Items</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-eggs" type="button">Eggs &amp; Early Plates</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-grains" type="button">Grains &amp; Greens</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-pancakes" type="button">Pancakes, Waffles &amp; Toasts</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-veg-small" type="button">Small Plates &amp; Shareables – Vegetarian</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-nonveg-small" type="button">Small Plates &amp; Shareables – Non-Vegetarian</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-boards" type="button">Shareable Boards</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-mains" type="button">All Day Plates / Mains</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-comfort" type="button">Comfort Corner</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-desserts" type="button">Desserts</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-coffee-classics" type="button">Coffee Classics</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-coffee-specials" type="button">Krafted Coffee Specials</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-iced-teas" type="button">Krafted Iced Teas</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-signatures" type="button">TBT Signatures</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-fresh-farm" type="button">Fresh From Farm</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-thickshakes" type="button">Thickshakes</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-matcha" type="button">Matcha Corner</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-smoothies" type="button">Classic Smoothie</button>
-<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-aerated" type="button">Aerated Drinks</button>
+<!-- Category Filter Tabs: Horizontal Rounded Pills Container -->
+<div class="px-6 sm:px-10 py-3.5 border-b border-stone-200 bg-[#FAF8F5]/90 backdrop-blur-sm overflow-x-auto no-scrollbar flex flex-nowrap items-center gap-2.5 shrink-0" id="menu-category-nav" onclick="setTimeout(()=&gt;{document.querySelectorAll('.category-tab').forEach(b=&gt;{if(b.classList.contains('bg-stone-900')||b.getAttribute('style')?.includes('3e5338')){if(b.classList.contains('bg-stone-900')){b.classList.remove('bg-stone-900','border-stone-900');}b.style.backgroundColor='#3e5338';b.style.borderColor='#3e5338';b.style.color='#ffffff';}else{b.style.backgroundColor='';b.style.borderColor='';b.style.color='';}});},10);">
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border cursor-pointer shrink-0 text-white shadow-md bg-brand-olive" data-target-id="modal-cat-all" type="button" style="background-color: #3e5338; border-color: #3e5338;">All Items</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border cursor-pointer shrink-0 bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm" data-target-id="modal-cat-eggs" type="button">Eggs &amp; Early Plates</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border cursor-pointer shrink-0 bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm" data-target-id="modal-cat-grains" type="button">Grains &amp; Greens</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-pancakes" type="button">Pancakes, Waffles &amp; Toasts</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-veg-small" type="button">Small Plates &amp; Shareables – Vegetarian</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-nonveg-small" type="button">Small Plates &amp; Shareables – Non-Vegetarian</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-boards" type="button">Shareable Boards</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-mains" type="button">All Day Plates / Mains</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-comfort" type="button">Comfort Corner</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-desserts" type="button">Desserts</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-coffee-classics" type="button">Coffee Classics</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-coffee-specials" type="button">Krafted Coffee Specials</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-iced-teas" type="button">Krafted Iced Teas</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-signatures" type="button">TBT Signatures</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-fresh-farm" type="button">Fresh From Farm</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-thickshakes" type="button">Thickshakes</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-matcha" type="button">Matcha Corner</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-smoothies" type="button">Classic Smoothie</button>
+<button class="category-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 border bg-white/80 text-stone-700 border-stone-200/80 hover:bg-stone-100 hover:text-stone-900 shadow-sm cursor-pointer shrink-0" data-target-id="modal-cat-aerated" type="button">Aerated Drinks</button>
 </div>
 <!-- Modal Content Body -->
-<div class="p-6 sm:px-10 overflow-y-auto space-y-8 flex-1 scroll-smooth" id="modal-content-container">
+<div class="p-6 sm:px-10 overflow-y-auto space-y-8 flex-1 scroll-smooth" id="modal-content-container" onscroll="setTimeout(()=&gt;{document.querySelectorAll('.category-tab').forEach(b=&gt;{if(b.classList.contains('bg-stone-900')){b.classList.remove('bg-stone-900','border-stone-900');b.style.backgroundColor='#3e5338';b.style.borderColor='#3e5338';b.style.color='#ffffff';}else if(!b.classList.contains('bg-white/80') &amp;&amp; b.style.backgroundColor==='rgb(62, 83, 56)'){b.style.backgroundColor='#3e5338';b.style.borderColor='#3e5338';b.style.color='#ffffff';}else{b.style.backgroundColor='';b.style.borderColor='';b.style.color='';}});},10);">
 <!-- Anchor for top / All Items -->
 <div class="h-0 w-0 pointer-events-none -mt-4" id="modal-cat-all"></div>
 <!-- Eggs & Early Plates -->
-<div class="menu-section-group" data-group="breakfast" id="modal-cat-eggs">
+<div class="menu-section-group scroll-mt-4" data-group="breakfast" id="modal-cat-eggs">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Eggs &amp; Early Plates</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">Shawarma Benedict</div>
@@ -776,7 +783,7 @@
 </div>
 </div>
 <!-- Grains, Bowls & Greens -->
-<div class="menu-section-group" data-group="bowls" id="modal-cat-grains">
+<div class="menu-section-group scroll-mt-4" data-group="bowls" id="modal-cat-grains">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Grains, Bowls &amp; Greens</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">Dimsum Bowl</div>
@@ -788,7 +795,7 @@
 </div>
 </div>
 <!-- Pancakes, Waffles & Toasts -->
-<div class="menu-section-group" data-group="toasts" id="modal-cat-pancakes">
+<div class="menu-section-group scroll-mt-4" data-group="toasts" id="modal-cat-pancakes">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Pancakes, Waffles &amp; Toasts</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">Banoffee French Toast</div>
@@ -804,7 +811,7 @@
 </div>
 </div>
 <!-- Small Plates & Shareables - Vegetarian -->
-<div class="menu-section-group" data-group="plates" id="modal-cat-veg-small">
+<div class="menu-section-group scroll-mt-4" data-group="plates" id="modal-cat-veg-small">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Small Plates &amp; Shareables – Vegetarian</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">Hashbrown Bruschetta</div>
@@ -822,7 +829,7 @@
 </div>
 </div>
 <!-- Small Plates & Shareables - Non-Vegetarian -->
-<div class="menu-section-group" data-group="plates" id="modal-cat-nonveg-small">
+<div class="menu-section-group scroll-mt-4" data-group="plates" id="modal-cat-nonveg-small">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Small Plates &amp; Shareables – Non-Vegetarian</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">Sichuan Popcorn Chicken</div>
@@ -839,7 +846,7 @@
 </div>
 </div>
 <!-- Shareable Boards -->
-<div class="menu-section-group" data-group="plates" id="modal-cat-boards">
+<div class="menu-section-group scroll-mt-4" data-group="plates" id="modal-cat-boards">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Shareable Boards (For Three or More)</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">Brunch Mezze Board</div>
@@ -850,7 +857,7 @@
 </div>
 </div>
 <!-- All Day Plates / Mains -->
-<div class="menu-section-group" data-group="mains" id="modal-cat-mains">
+<div class="menu-section-group scroll-mt-4" data-group="mains" id="modal-cat-mains">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">All Day Plates / Mains</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">Mushroom Ragu Pasta</div>
@@ -866,7 +873,7 @@
 </div>
 </div>
 <!-- Comfort Corner -->
-<div class="menu-section-group" data-group="mains" id="modal-cat-comfort">
+<div class="menu-section-group scroll-mt-4" data-group="mains" id="modal-cat-comfort">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Comfort Corner</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">Thai Curry Rice Bowl</div>
@@ -874,7 +881,7 @@
 </div>
 </div>
 <!-- Desserts -->
-<div class="menu-section-group" data-group="desserts" id="modal-cat-desserts">
+<div class="menu-section-group scroll-mt-4" data-group="desserts" id="modal-cat-desserts">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Desserts</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">Dark Chocolate Curry Leaf Mousse</div>
@@ -885,7 +892,7 @@
 </div>
 </div>
 <!-- Coffee Classics -->
-<div class="menu-section-group" data-group="coffee" id="modal-cat-coffee-classics">
+<div class="menu-section-group scroll-mt-4" data-group="coffee" id="modal-cat-coffee-classics">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Coffee Classics</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">ESPRESSO</div>
@@ -905,7 +912,7 @@
 </div>
 </div>
 <!-- Krafted Coffee Specials -->
-<div class="menu-section-group" data-group="coffee" id="modal-cat-coffee-specials">
+<div class="menu-section-group scroll-mt-4" data-group="coffee" id="modal-cat-coffee-specials">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Krafted Coffee Specials</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">COCONUT ESPRESSO COOLER</div>
@@ -918,7 +925,7 @@
 </div>
 </div>
 <!-- Krafted Iced Teas -->
-<div class="menu-section-group" data-group="coffee" id="modal-cat-iced-teas">
+<div class="menu-section-group scroll-mt-4" data-group="coffee" id="modal-cat-iced-teas">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Krafted Iced Teas</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">BASIL ICED TEA</div>
@@ -930,12 +937,12 @@
 </div>
 </div>
 <!-- TBT Signatures -->
-<div class="menu-section-group" data-group="coffee" id="modal-cat-signatures">
+<div class="menu-section-group scroll-mt-4" data-group="coffee" id="modal-cat-signatures">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">TBT Signatures</h4>
 <div class="text-xs text-stone-400 italic">Seasonal specials rotating weekly.</div>
 </div>
 <!-- Fresh From Farm -->
-<div class="menu-section-group" data-group="beverages" id="modal-cat-fresh-farm">
+<div class="menu-section-group scroll-mt-4" data-group="beverages" id="modal-cat-fresh-farm">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Fresh From Farm</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">TENDER COCONUT BLOSSOM</div>
@@ -947,7 +954,7 @@
 </div>
 </div>
 <!-- Thickshakes -->
-<div class="menu-section-group" data-group="beverages" id="modal-cat-thickshakes">
+<div class="menu-section-group scroll-mt-4" data-group="beverages" id="modal-cat-thickshakes">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Thickshakes</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">MILO OVERLOAD</div>
@@ -955,7 +962,7 @@
 </div>
 </div>
 <!-- Matcha Corner -->
-<div class="menu-section-group" data-group="beverages" id="modal-cat-matcha">
+<div class="menu-section-group scroll-mt-4" data-group="beverages" id="modal-cat-matcha">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Matcha Corner</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">MATCHA</div>
@@ -963,7 +970,7 @@
 </div>
 </div>
 <!-- Classic Smoothie -->
-<div class="menu-section-group" data-group="beverages" id="modal-cat-smoothies">
+<div class="menu-section-group scroll-mt-4" data-group="beverages" id="modal-cat-smoothies">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Classic Smoothie</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">ORANGE SMOOTHIE</div>
@@ -974,7 +981,7 @@
 </div>
 </div>
 <!-- Aerated Drinks -->
-<div class="menu-section-group" data-group="beverages" id="modal-cat-aerated">
+<div class="menu-section-group scroll-mt-4" data-group="beverages" id="modal-cat-aerated">
 <h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Aerated Drinks</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
 <div class="font-medium text-stone-900">SODA</div>
@@ -1081,12 +1088,50 @@ document.addEventListener('DOMContentLoaded', () => {
   const openMenuBtn = document.getElementById('open-menu-modal');
   const menuModal = document.getElementById('menu-modal');
   const closeMenuBtn = document.getElementById('close-menu-modal');
-  const menuTabs = document.querySelectorAll('.menu-tab');
+  const categoryNav = document.getElementById('menu-category-nav');
+  const categoryPills = document.querySelectorAll('.category-tab');
   const modalScrollContainer = document.getElementById('modal-content-container');
+  const menuSectionGroups = document.querySelectorAll('.menu-section-group');
+
+  // Pill styling constants
+  const activePillClasses = ['bg-stone-900', 'text-white', 'border-stone-900', 'shadow-md'];
+  const inactivePillClasses = ['bg-white/80', 'text-stone-700', 'border-stone-200/80', 'hover:bg-stone-100', 'hover:text-stone-900', 'shadow-sm'];
+
+  let isProgrammaticScrolling = false;
+  let scrollTimeout = null;
+
+  function setActivePill(activePill, smoothCenter = true) {
+    if (!activePill) return;
+
+    categoryPills.forEach((pill) => {
+      pill.classList.remove(...activePillClasses);
+      pill.classList.add(...inactivePillClasses);
+    });
+
+    activePill.classList.remove(...inactivePillClasses);
+    activePill.classList.add(...activePillClasses);
+
+    if (categoryNav) {
+      // Calculate exact center offset
+      const targetScrollLeft = activePill.offsetLeft - (categoryNav.clientWidth / 2) + (activePill.offsetWidth / 2);
+      categoryNav.scrollTo({
+        left: Math.max(0, targetScrollLeft),
+        behavior: smoothCenter ? 'smooth' : 'auto'
+      });
+    }
+  }
 
   function openMenu() {
     menuModal.classList.remove('hidden');
     document.body.classList.add('overflow-hidden');
+    // Ensure first tab ("All Items") is properly highlighted and scrolled to beginning
+    const firstPill = categoryPills[0];
+    if (firstPill) {
+      setActivePill(firstPill, false);
+    }
+    if (modalScrollContainer) {
+      modalScrollContainer.scrollTop = 0;
+    }
   }
 
   function closeMenu() {
@@ -1101,51 +1146,72 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === menuModal) closeMenu();
   });
 
-  // Dedicated function for scrolling inside the modal
-  function scrollToModalCategory(targetId, activeTabElement) {
-    if (!modalScrollContainer) return;
-
-    // Update active tab styles
-    menuTabs.forEach((tab) => {
-      tab.classList.remove('text-brand-olive', 'border-b-2', 'border-brand-olive');
-      tab.classList.add('text-stone-500');
-    });
-
-    if (activeTabElement) {
-      activeTabElement.classList.add('text-brand-olive', 'border-b-2', 'border-brand-olive');
-      activeTabElement.classList.remove('text-stone-500');
-      // Keep active tab visible in the horizontal tab bar
-      activeTabElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-    }
-
-    if (targetId === 'modal-cat-all') {
-      modalScrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      const containerRect = modalScrollContainer.getBoundingClientRect();
-      const targetRect = targetElement.getBoundingClientRect();
-      const targetTop = targetRect.top - containerRect.top + modalScrollContainer.scrollTop - 16;
-      modalScrollContainer.scrollTo({
-        top: Math.max(0, targetTop),
-        behavior: 'smooth'
-      });
-    }
-  }
-
-  // Attach click handlers to category tab buttons
-  menuTabs.forEach((tab) => {
-    tab.addEventListener('click', (e) => {
+  // Category pill click handler with smooth auto-centering and container scroll
+  categoryPills.forEach((pill) => {
+    pill.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      const targetId = tab.getAttribute('data-target-id');
-      if (targetId) {
-        scrollToModalCategory(targetId, tab);
+
+      const targetId = pill.getAttribute('data-target-id');
+      if (!targetId || !modalScrollContainer) return;
+
+      isProgrammaticScrolling = true;
+      setActivePill(pill, true);
+
+      if (targetId === 'modal-cat-all') {
+        modalScrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          const containerRect = modalScrollContainer.getBoundingClientRect();
+          const targetRect = targetElement.getBoundingClientRect();
+          const targetTop = targetRect.top - containerRect.top + modalScrollContainer.scrollTop - 12;
+          modalScrollContainer.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: 'smooth'
+          });
+        }
       }
+
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isProgrammaticScrolling = false;
+      }, 700);
     });
   });
+
+  // Vertical scroll spy inside the modal to update active category pill
+  if (modalScrollContainer) {
+    modalScrollContainer.addEventListener('scroll', () => {
+      if (isProgrammaticScrolling) return;
+
+      if (modalScrollContainer.scrollTop < 60) {
+        const allPill = document.querySelector('.category-tab[data-target-id="modal-cat-all"]');
+        if (allPill && !allPill.classList.contains('bg-stone-900')) {
+          setActivePill(allPill, true);
+        }
+        return;
+      }
+
+      let activeSectionId = null;
+      const containerRect = modalScrollContainer.getBoundingClientRect();
+
+      menuSectionGroups.forEach((section) => {
+        const sectionRect = section.getBoundingClientRect();
+        // Section is active if its top is near top edge of the visible scroll container
+        if (sectionRect.top - containerRect.top <= 120) {
+          activeSectionId = section.getAttribute('id');
+        }
+      });
+
+      if (activeSectionId) {
+        const activePill = document.querySelector(`.category-tab[data-target-id="${activeSectionId}"]`);
+        if (activePill && !activePill.classList.contains('bg-stone-900')) {
+          setActivePill(activePill, true);
+        }
+      }
+    }, { passive: true });
+  }
 
   // 5. Gallery Lightbox Functionality
   const galleryItems = document.querySelectorAll('.gallery-item');
@@ -1206,4 +1272,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
+
 </body></html>
