@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kreate by Kraft – ECR | Kraft Collective - East Coast Road, Chennai</title>
+<!-- Google Fonts: EB Garamond (Serif Display) and Inter (Sans Clean) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FAF8F5',
+              creamDark: '#F3EFEA',
+              olive: '#3E5338',
+              oliveDark: '#2F402C',
+              oliveLight: '#4F6847',
+              charcoal: '#212121',
+              muted: '#6B6864',
+              gold: '#C5A880'
+            }
+          },
+          fontFamily: {
+            serif: ['"EB Garamond"', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-typography">
+    .font-serif-title {
+      font-family: 'EB Garamond', serif;
+    }
+    .tracking-widest-plus {
+      letter-spacing: 0.18em;
+    }
+    html {
+      scroll-padding-top: 5rem;
+    }
+    /* Infinite Marquee Animation */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: marquee 28s linear infinite;
+    }
+    .marquee-wrapper:hover .animate-marquee {
+      animation-play-state: paused;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-marquee {
+        animation: none;
+      }
+    }
+    /* Subtle scroll reveal */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Dotted leader for menu prices */
+    .dotted-leader {
+      flex: 1;
+      border-bottom: 1px dotted #c7c3bd;
+      margin: 0 0.5rem;
+      transform: translateY(-4px);
+    }
+    /* Hide scrollbars cleanly */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+</style>
+</head>
+<body class="bg-[#FAF8F5] text-brand-charcoal font-sans antialiased selection:bg-brand-olive selection:text-white">
+<!-- BEGIN: Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-200/60 transition-all duration-300" id="navbar">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex flex-col group focus:outline-none" href="#home">
+<span class="font-serif-title text-2xl lg:text-3xl tracking-tight text-brand-charcoal font-medium">Kraft Collective</span>
+<span class="text-[9px] uppercase tracking-widest-plus text-stone-500 font-semibold -mt-1 group-hover:text-brand-olive transition-colors">Kreate by Kraft • ECR</span>
+</a>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center space-x-8 text-[13px] font-medium tracking-wide text-stone-700"><a class="hover:text-brand-olive transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-brand-olive hover:after:w-full after:transition-all after:duration-200" href="#home" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">HOME</a>
+<a class="hover:text-brand-olive transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-brand-olive hover:after:w-full after:transition-all after:duration-200" href="#about" onclick="event.preventDefault(); document.getElementById('about')?.scrollIntoView({behavior: 'smooth', block: 'start'});">ABOUT</a>
+<a class="hover:text-brand-olive transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-brand-olive hover:after:w-full after:transition-all after:duration-200" href="#menu" onclick="event.preventDefault(); document.getElementById('menu')?.scrollIntoView({behavior: 'smooth', block: 'start'});">MENUS</a>
+<a class="hover:text-brand-olive transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-brand-olive hover:after:w-full after:transition-all after:duration-200" href="#gallery" onclick="event.preventDefault(); document.getElementById('gallery')?.scrollIntoView({behavior: 'smooth', block: 'start'});">GALLERY</a>
+<a class="hover:text-brand-olive transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-brand-olive hover:after:w-full after:transition-all after:duration-200" href="#events" onclick="event.preventDefault(); document.getElementById('events')?.scrollIntoView({behavior: 'smooth', block: 'start'});">EVENTS</a></nav>
+<!-- Reservation Header CTA & Mobile Hamburger -->
+<div class="flex items-center space-x-3">
+<a class="hidden sm:inline-block bg-brand-olive hover:bg-brand-oliveDark active:scale-95 text-white text-[12px] uppercase font-semibold tracking-wider px-6 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow" href="https://wa.me/918754476660?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Kreate%20by%20Kraft%20ECR" rel="noopener noreferrer" target="_blank">
+        Reserve a Table
+      </a>
+<!-- Mobile Hamburger Button -->
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-brand-charcoal p-2 rounded-lg hover:bg-stone-200/50 focus:outline-none transition-colors" id="mobileMenuBtn">
+<svg class="w-6 h-6" fill="none" id="hamburgerIcon" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<svg class="w-6 h-6 hidden" fill="none" id="closeNavIcon" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Mobile Dropdown Navigation Menu -->
+<div class="md:hidden hidden bg-[#FAF8F5] border-b border-stone-200 shadow-xl px-6 py-6 transition-all duration-300" id="mobileMenu">
+<nav class="flex flex-col space-y-4 text-sm font-medium tracking-wider text-stone-800"><a class="mobile-nav-link hover:text-brand-olive py-2 border-b border-stone-200/60" href="#home" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">HOME</a>
+<a class="mobile-nav-link hover:text-brand-olive py-2 border-b border-stone-200/60" href="#about" onclick="event.preventDefault(); document.getElementById('about')?.scrollIntoView({behavior: 'smooth', block: 'start'});">ABOUT</a>
+<a class="mobile-nav-link hover:text-brand-olive py-2 border-b border-stone-200/60" href="#menu" onclick="event.preventDefault(); document.getElementById('menu')?.scrollIntoView({behavior: 'smooth', block: 'start'});">MENUS</a>
+<a class="mobile-nav-link hover:text-brand-olive py-2 border-b border-stone-200/60" href="#gallery" onclick="event.preventDefault(); document.getElementById('gallery')?.scrollIntoView({behavior: 'smooth', block: 'start'});">GALLERY</a>
+<a class="mobile-nav-link hover:text-brand-olive py-2 border-b border-stone-200/60" href="#events" onclick="event.preventDefault(); document.getElementById('events')?.scrollIntoView({behavior: 'smooth', block: 'start'});">EVENTS</a>
+<a class="mobile-nav-link inline-block text-center bg-brand-olive text-white py-3 rounded-full text-xs uppercase tracking-widest font-semibold mt-2" href="https://wa.me/918754476660?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Kreate%20by%20Kraft%20ECR" rel="noopener noreferrer" target="_blank">Reserve a Table</a></nav>
+</div>
+</header>
+<!-- END: Navigation -->
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="relative pt-24 min-h-[92vh] flex flex-col justify-between overflow-hidden" id="home">
+<!-- Background Image with Parallax Zoom Support -->
+<div class="absolute inset-0 z-0 overflow-hidden">
+<img alt="Kreate by Kraft ECR Outdoor Garden Dining" class="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000 ease-out" id="heroImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjy9YHSMTktjRr3fi4FdMQ8jBNa_aru5aEfs4sQQ7-FsfAyna8swvCmqpMf9pEb9D7OL1OS5Bd7r87vAKHpOVfmYC2m21x9NUDhNaZ5XIILnKVUVgW6XahA35iVZWrhpRofUZnb4GXY6aaQ_C3QZNUW4U_1E5UoJfBJtpIccVx1Nt9Z918v7Dlmz70wGRvRba_MzaICcx3-3bzDEK7kDDTXRa2L4eQmEZ96Gb2UG7EQPbxfGYvHtewDsMW2IWpdG45mJwcZ0nUvkYWaw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/65 to-stone-950/60"></div>
+</div>
+<!-- Main Hero Content -->
+<div class="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-24 text-center my-auto">
+<!-- Eyebrow text -->
+<p class="text-white/80 uppercase text-[11px] lg:text-[13px] tracking-widest-plus font-medium mb-6 animate-[fadeIn_0.9s_ease-out]">KREATE BY KRAFT • ECR</p>
+<!-- Big Serif Display Heading -->
+<h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl text-white font-normal leading-tight lg:leading-[1.1] mb-8">Escape Into Nature.</h1>
+<!-- Subtitle -->
+<p class="text-stone-300 text-base sm:text-lg lg:text-xl font-light max-w-2xl mx-auto leading-relaxed mb-10">A peaceful destination surrounded by greenery, crafted for relaxed dining, specialty coffee and memorable moments.</p>
+<!-- CTA Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto bg-brand-olive hover:bg-brand-oliveLight active:scale-95 text-white font-medium text-xs uppercase tracking-widest-plus px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5" href="https://wa.me/918754476660?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Kreate%20by%20Kraft%20ECR" rel="noopener noreferrer" target="_blank">
+        Reserve a Table
+      </a>
+<a class="w-full sm:w-auto bg-transparent hover:bg-white/10 text-white border border-white/40 hover:border-white font-medium text-xs uppercase tracking-widest-plus px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5" href="#menu" onclick="event.preventDefault(); document.getElementById('menu')?.scrollIntoView({behavior: 'smooth', block: 'start'});">
+        View Menu
+      </a>
+</div>
+</div>
+<!-- Continuous Infinite Marquee Strip -->
+<div class="relative z-10 bg-brand-oliveDark border-t border-brand-olive/30 py-3.5 px-4 overflow-hidden marquee-wrapper cursor-default">
+<div class="animate-marquee flex items-center space-x-6 text-[11px] md:text-xs text-white/90 uppercase tracking-widest-plus font-medium">
+<span class="">Specialty Coffee</span><span class="text-brand-gold">•</span>
+<span class="">Artisanal Brunch</span><span class="text-brand-gold">•</span>
+<span class="">East Coast Road</span><span class="text-brand-gold">•</span>
+<span class="">Coastal Garden Dining</span><span class="text-brand-gold">•</span>
+<span class="">Curated Mocktails</span><span class="text-brand-gold">•</span>
+<span class="">Intimate Gatherings</span><span class="text-brand-gold">•</span>
+<span class="">Specialty Coffee</span><span class="text-brand-gold">•</span>
+<span class="">Artisanal Brunch</span><span class="text-brand-gold">•</span>
+<span class="">East Coast Road</span><span class="text-brand-gold">•</span>
+<span class="">Coastal Garden Dining</span><span class="text-brand-gold">•</span>
+<span class="">Curated Mocktails</span><span class="text-brand-gold">•</span>
+<span class="">Intimate Gatherings</span><span class="text-brand-gold">•</span>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: AboutSection -->
+<section class="py-24 lg:py-32 bg-[#FAF8F5] reveal-on-scroll is-visible" id="about" style="scroll-margin-top: 100px;">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Narrative Left Column -->
+<div class="lg:col-span-6 space-y-6">
+<span class="text-brand-olive text-xs font-bold uppercase tracking-widest block">— ABOUT KREATE BY KRAFT • ECR</span>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-brand-charcoal font-normal leading-tight">Your Escape From The City.</h2>
+<div class="space-y-4 text-stone-600 font-light text-base lg:text-lg leading-relaxed pt-2">
+<p class="">A relaxed destination surrounded by greenery, perfect for slow lunches, specialty coffee, family gatherings and memorable moments.</p>
+<p class="">Nestled along Chennai's scenic East Coast Road, our coastal sanctuary celebrates unhurried open-air dining under swaying palms.</p>
+</div>
+<!-- Stats Metrics -->
+<div class="grid grid-cols-3 gap-6 pt-8 border-t border-stone-200">
+<div class="group cursor-default">
+<p class="font-serif text-3xl lg:text-4xl text-brand-charcoal group-hover:text-brand-olive transition-colors">08+</p>
+<p class="text-[11px] uppercase tracking-wider text-stone-500 font-medium mt-1">Acres of Green</p>
+</div>
+<div class="group cursor-default">
+<p class="font-serif text-3xl lg:text-4xl text-brand-charcoal group-hover:text-brand-olive transition-colors">100%</p>
+<p class="text-[11px] uppercase tracking-wider text-stone-500 font-medium mt-1">Artisanal Sourced</p>
+</div>
+<div class="group cursor-default">
+<p class="font-serif text-3xl lg:text-4xl text-brand-charcoal group-hover:text-brand-olive transition-colors">ECR</p>
+<p class="text-[11px] uppercase tracking-wider text-stone-500 font-medium mt-1">East Coast Road</p>
+</div>
+</div>
+</div>
+<!-- Imagery Right Column -->
+<div class="lg:col-span-6">
+<div class="relative group">
+<div class="overflow-hidden rounded-2xl shadow-2xl aspect-[4/3] bg-stone-200 ring-1 ring-black/5">
+<img alt="Kreate by Kraft ECR Outdoor Coastal Garden Dining" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBii7oypoqTDvFG2NTYSjuuD74bckhKFzlQWQyex6ed3eSfVYL7wuJ4UBZidKnVfqWPCxrTSFvIEwM-uh_MdjJoWXLOayAGoOS3ApAi8ctdNVrXmqAf2jr3Glt4M7SjBTwT2s0a9iLTHmLKWYd5LdzqaXntnlUYKF3FVbtAyURReCavB8wds-PdofjyjjM9W3uVrCzuwidY-Ev2OcFe8asJ3pq-40MUjkEGPUOeP5s4tv3FKkta5izjVPdcte8kfwS94c4lyi40ABD11w"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutSection -->
+<!-- BEGIN: CuratedOfferings -->
+<section class="py-24 bg-[#F5F2ED] border-y border-stone-200/60 reveal-on-scroll is-visible" id="menu" style="scroll-margin-top: 100px;">
+<div class="max-w-7xl mx-auto px-6 lg:px-12"><!-- Header -->
+<div class="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
+<span class="text-brand-olive text-xs uppercase tracking-widest-plus font-semibold block mb-3">Crafted Flavours</span>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-brand-charcoal font-normal mb-4">Curated Offerings</h2>
+<p class="text-stone-600 font-light text-base lg:text-lg">Locally inspired techniques meeting global culinary craft — made fresh-to-order every day.</p>
+</div>
+<!-- Multi-Column Side-by-Side Menu Preview Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+<!-- All Day Breakfast -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">All Day Breakfast</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Morning to Evening</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">The Kraft Loaded Omelette</h4><p class="text-xs text-stone-500 mt-0.5">Farm fresh eggs, sautéed greens, artisanal aged cheddar, toasted sourdough.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Shakshuka</h4><p class="text-xs text-stone-500 mt-0.5">Poached eggs in spiced heirloom tomato &amp; bell pepper ragout with warm pita.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Chicken Waffling</h4><p class="text-xs text-stone-500 mt-0.5">Crispy spiced chicken tenderloins on golden Belgian waffle, spiced honey drizzle.</p></div>
+</div>
+</div>
+<!-- Soups & Salads -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">Soups &amp; Salads</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Fresh &amp; Wholesome</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Chicken &amp; Leek Soup</h4><p class="text-xs text-stone-500 mt-0.5">Velvety roasted leek emulsion, slow-poached shredded chicken, garlic herb croutons.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Mushroom &amp; Truffle Soup</h4><p class="text-xs text-stone-500 mt-0.5">Forest mushroom purée infused with black truffle oil and thyme foam.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Slow Cooked Chicken Salad</h4><p class="text-xs text-stone-500 mt-0.5">Herb-infused tender chicken, organic greens, charred citrus, honey Dijon dressing.</p></div>
+</div>
+</div>
+<!-- Vegetarian Starters -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">Vegetarian Starters</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Small Plates</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Paneer Kunafa</h4><p class="text-xs text-stone-500 mt-0.5">Crisp spun phyllo threads embracing spiced malai paneer with mint labneh.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Chilli Oil Mushroom Bruschetta</h4><p class="text-xs text-stone-500 mt-0.5">Sautéed wild mushrooms tossed in house chilli crunch on toasted sourdough.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Mangalore Ghee Roast Paneer</h4><p class="text-xs text-stone-500 mt-0.5">Slow-roasted cottage cheese tossed in Byadgi chili paste, pure desi ghee and curry leaves.</p></div>
+</div>
+</div>
+<!-- Non-Vegetarian Starters -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">Non-Veg Starters</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Artisanal Bites</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Peri Peri Chicken Bullets</h4><p class="text-xs text-stone-500 mt-0.5">Crispy hand-rolled chicken morsels dusted in African bird's eye spice blend.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Mangalore Ghee Roast Chicken</h4><p class="text-xs text-stone-500 mt-0.5">Succulent bone-in chicken slow roasted in fragrant coastal ghee masala.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Korean Fried Chicken</h4><p class="text-xs text-stone-500 mt-0.5">Double-fried crunchy chicken glazed with sticky gochujang sweet-garlic sauce.</p></div>
+</div>
+</div>
+<!-- Pasta -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">Pasta</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Handcrafted</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Formaggi</h4><p class="text-xs text-stone-500 mt-0.5">Four cheese velvety cream sauce with fresh cracked peppercorns and herbs.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Pesto Cream</h4><p class="text-xs text-stone-500 mt-0.5">Genovese sweet basil pesto blended with rich light cream and toasted pine nuts.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Aurora</h4><p class="text-xs text-stone-500 mt-0.5">Silky pink tomato cream sauce with sun-dried cherry tomatoes and grated parmesan.</p></div>
+</div>
+</div>
+<!-- Grills -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">Grills</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Charred &amp; Sizzling</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Bang Bang Paneer Steak</h4><p class="text-xs text-stone-500 mt-0.5">Grilled cottage cheese steak served with fiery bang bang drizzle &amp; tossed greens.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Telicherry Grill</h4><p class="text-xs text-stone-500 mt-0.5">Spiced cracked black peppercorn marinated supreme cooked over hot charcoals.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Grilled Pesto Butter Fish</h4><p class="text-xs text-stone-500 mt-0.5">Fresh catch of the coast basted in herb pesto butter, charred baby vegetables.</p></div>
+</div>
+</div>
+<!-- Between Breads -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">Between Breads</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Artisanal Sandos</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Japanese Egg Sando</h4><p class="text-xs text-stone-500 mt-0.5">Creamy Japanese egg salad on pillowy milk shokupan bread with kewpie mayo.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Korean Fried Chicken Burger</h4><p class="text-xs text-stone-500 mt-0.5">Gochujang glazed chicken patty, kimchi slaw, brioche bun, sesame aioli.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">BBQ Pulled Beef Burger</h4><p class="text-xs text-stone-500 mt-0.5">Slow-smoked pulled beef, house bourbon barbecue glaze, pickled gherkins.</p></div>
+</div>
+</div>
+<!-- Bao Buns -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">Bao Buns</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Steamed Lotus Buns</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Crispy Cauliflower Bao</h4><p class="text-xs text-stone-500 mt-0.5">Spiced golden florets, sriracha mayo, scallions inside fluffy lotus leaf buns.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Tempura Prawn Bao</h4><p class="text-xs text-stone-500 mt-0.5">Golden crisp coastal prawns, pickled cucumber ribbons, unagi glaze.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Thai Basil Chicken Bao</h4><p class="text-xs text-stone-500 mt-0.5">Wok-tossed minced chicken with holy basil, bird's eye chili and crisp shallots.</p></div>
+</div>
+</div>
+<!-- Pizzas -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">Pizzas</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Wood-Fired Neapolitan</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Margherita Classic</h4><p class="text-xs text-stone-500 mt-0.5">San Marzano tomatoes, fresh fior di latte mozzarella, fresh sweet basil, extra virgin olive oil.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Peri Peri</h4><p class="text-xs text-stone-500 mt-0.5">Fiery peri peri spiced crust, charred peppers, red onions, smoked mozzarella.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Truffle &amp; Mushroom Pizza</h4><p class="text-xs text-stone-500 mt-0.5">Forest mushrooms, truffle fonduta, aged parmesan shavings, fresh thyme leaves.</p></div>
+</div>
+</div>
+<!-- Southern Specials -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">Southern Specials</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Coastal Traditions</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Kerala Beef Curry</h4><p class="text-xs text-stone-500 mt-0.5">Slow-cooked tender beef chuck in aromatic toasted coconut, fennel and shallot gravy.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Prawn / Fish Moilee</h4><p class="text-xs text-stone-500 mt-0.5">Traditional mild yellow coconut stew with fresh coastal catch, ginger and green chillies.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Curd Rice with Potato Varuval</h4><p class="text-xs text-stone-500 mt-0.5">Tempered home-style velvety curd rice served with fiery crisp Chettinad baby potato fry.</p></div>
+</div>
+</div>
+<!-- Asian Bowls -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">Asian Bowls</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Wok &amp; Broth</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Mi Goreng</h4><p class="text-xs text-stone-500 mt-0.5">Wok-tossed Indonesian egg noodles, sweet soy kecap manis, seasonal greens, shallot crunch.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Thai Curry Bowl</h4><p class="text-xs text-stone-500 mt-0.5">Aromatic lemongrass coconut broth with bamboo shoots, baby aubergines, jasmine rice.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Chicken Katsu Curry</h4><p class="text-xs text-stone-500 mt-0.5">Crispy panko fried chicken breast over steamed rice with sweet Japanese curry sauce.</p></div>
+</div>
+</div>
+<!-- In House Special Desserts -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">In House Special Desserts</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Patisserie Crafts</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Biscoff Cheesecake</h4><p class="text-xs text-stone-500 mt-0.5">Baked cream cheese with caramelized speculoos cookie butter swirl &amp; crumb.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Tiramisu</h4><p class="text-xs text-stone-500 mt-0.5">Savoiardi soaked in single origin espresso, layered with whipped zabaglione mascarpone.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Chocolate Lava</h4><p class="text-xs text-stone-500 mt-0.5">Warm molten center 70% dark Valrhona chocolate cake served with vanilla bean cream.</p></div>
+</div>
+</div>
+<!-- Hot Brews / Cold Brews -->
+<div class="space-y-4">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">Hot &amp; Cold Brews</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Specialty Roasts</span>
+</div>
+<div class="space-y-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Americano</h4><p class="text-xs text-stone-500 mt-0.5">Double shot espresso pulled over hot water, rich crema, clean cocoa undertones.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Flat White</h4><p class="text-xs text-stone-500 mt-0.5">Velvety steamed microfoam folded over a double ristretto extraction.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Biscoff Cold Coffee</h4><p class="text-xs text-stone-500 mt-0.5">Shaken espresso, chilled whole milk and blended caramelized Lotus cookie spread.</p></div>
+</div>
+</div>
+<!-- Beverages -->
+<div class="space-y-4 md:col-span-2 lg:col-span-2">
+<div class="border-b border-stone-300/80 pb-2 flex justify-between items-baseline">
+<h3 class="font-serif text-2xl text-brand-charcoal">Beverages &amp; Shakes</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Coolers &amp; Shakes</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Virjin Mojito</h4><p class="text-xs text-stone-500 mt-0.5">Muddled garden mint, Persian lime, cane sugar, sparkling chilled soda.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Watermelon Juice</h4><p class="text-xs text-stone-500 mt-0.5">Freshly cold pressed sweet seedless watermelon with Himalayan pink salt.</p></div>
+<div class="group p-2 -mx-2 rounded-lg hover:bg-white/60 transition-colors"><h4 class="font-medium text-stone-900 text-sm group-hover:text-brand-olive transition-colors">Lotus Biscoff Shake</h4><p class="text-xs text-stone-500 mt-0.5">Rich artisanal ice cream shake spun with crushed speculoos biscuits.</p></div>
+</div>
+</div>
+</div>
+<!-- Menu Action Button: Opens Modal -->
+<div class="text-center mt-16">
+<button class="inline-flex items-center space-x-2 bg-brand-charcoal hover:bg-stone-800 active:scale-95 text-white text-xs font-semibold uppercase tracking-widest-plus px-8 py-3.5 rounded-full transition-all duration-200 shadow-md hover:shadow-lg" id="openMenuModalBtn" type="button">
+<span class="">View Full Menu</span>
+<span class="">→</span>
+</button>
+</div></div>
+</section>
+<!-- END: CuratedOfferings -->
+<!-- BEGIN: TheAtmosphere -->
+<section class="py-24 bg-[#FAF8F5] reveal-on-scroll is-visible" id="experience">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-3xl mx-auto mb-14">
+<span class="text-brand-olive text-xs uppercase tracking-widest-plus font-semibold block mb-3">
+        The Atmosphere
+      </span>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-brand-charcoal font-normal mb-6">Slow Down. Stay A Little Longer.</h2>
+<p class="text-stone-600 font-light text-base lg:text-lg leading-relaxed">Designed by Kraft Studio, our East Coast Road retreat seamlessly blends open-air coastal pavilions, rustling palms, and sun-dappled verandas for leisurely days.</p>
+</div>
+<!-- Hero Sized Interior Photograph -->
+<div class="overflow-hidden rounded-3xl shadow-xl aspect-[16/9] lg:aspect-[21/9] bg-stone-300 ring-1 ring-black/5">
+<img alt="Kreate by Kraft ECR open-air garden and coastal pavilions" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP4m4rY2sxTlBpEkEphlotwXstMvQgvc1KHUABltRnrwzY2G8Ywt4_wwlHM4WcElZafVF2G5yvJIlmBzbfkCS-XCep8bdN7VhW_5W1u-S52W9Wb_CvJSsAO0XGqzgPGD3SHEMwhH25hlYG6z8IzkiEkiNp-DtSobRS2uGlYPfbOl_xg5Ozszt6xJMfV6nN4it2z4U221MSVAQJNzgbbMioL4fjmgpr9HXkvN7YZ9Y5LM3XCyipKO-i_xIUpyBvh8Bu0BLlQdDCU4QYKg"/>
+</div>
+</div>
+</section>
+<!-- END: TheAtmosphere -->
+<!-- BEGIN: VisualChronicle -->
+<section class="py-16 bg-[#FAF8F5] reveal-on-scroll is-visible" id="gallery" style="scroll-margin-top: 100px;">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<span class="text-brand-olive text-xs uppercase tracking-widest-plus font-semibold block mb-2">
+          Visual Chronicle
+        </span>
+<h2 class="font-serif text-4xl sm:text-4xl text-brand-charcoal font-normal">
+          A Look Inside The Craft
+        </h2>
+</div>
+<span class="text-xs uppercase tracking-widest text-stone-500 font-medium mt-2 md:mt-0">EAST COAST ROAD • CHENNAI</span>
+</div>
+<!-- 3-Image Showcase Grid with interactive Lightbox triggers -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+<!-- Card 1 -->
+<div class="group overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 shadow-md relative cursor-default">
+<img alt="ECR coastal garden seating with fairy lights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxifIu8U7IcWYKq3g29vcaxzvaKUosYoQI0H2HNQCw0xiUz79lF7rAurGZ_olmG_gqKT66VDDMsubOq0hLN6TrJCmYDqvZz3qfut90MVaynpFPSBzwBO33WZyxln0i4Oc2XxX9fki7mu-9dpeYoJeh7_40AbCv1K7b_VomoQs0pnFX0ncLdT0czoGc76mDnw4zOO6_UpNCgNjTsdFpmwTqBAcuavp5MW_VKk-KszgEs6AKiO7lL11EDXdbv4Sz3i-TPjfz4Hte6K1QZQ"/>
+</div>
+<!-- Card 2 -->
+<div class="group overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 shadow-md relative cursor-default">
+<img alt="Chef garnishing gourmet sea bass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgfdY_z96yeKImus2P1VDm_Frz2UP2w_dTOT2nA_hrrbLoifm3NZ3PNEX7wrujtkCQpXXuLLlEohB7a9uyltcqFHOdGDZrDNCU6Xwfv9Z0_2B6KH0aP9AwqqnRF0r0dc9ah9Ei7_I9CoAM2ShWpExraO2EF05cHKTzFT-Y7dxTFaiENwiyvBtnOZybTtcu1UtXHkWLVrQIhIttN0zvH9qpoUdVgLkKmjnC61PHkOZGe8I2aLiYtSLPoMs_bXyne0nHjZsVlKuJbFlTbQ"/>
+</div>
+<!-- Card 3 -->
+<div class="group overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 shadow-md relative cursor-default">
+<img alt="Layered botanical craft cooler cocktail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsGBji7wklHR5c3z-SFul7VS8qWqKlmqY5qEP0R12DP1Jn_yehA8vpSVix-DIVY9MeqQHqYrm-iLl1siKg6pUWSVrSIBRx0nzlu28dGbLsi0OfB4n1XlqID3H9hybV2G4kAQCsm2_4XWOd6Cov3Ix0WwbA0myeX0jUDeDGcmwGYgyVH6Lgv6NtLRob9E534rbR2b53OQDAEdeNxrWsZw-jxbi-6uZd17UhW3Lb2jGINLL3sAQga86P8bWHiMUrJx_iORNMuGwyZex4Sg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- END: VisualChronicle -->
+<!-- BEGIN: BespokeGatherings -->
+<section class="py-24 bg-[#2f402c] text-white reveal-on-scroll is-visible" id="events" style="scroll-margin-top: 100px;">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<span class="text-brand-gold text-xs uppercase tracking-widest-plus font-semibold block mb-4">
+      Bespoke Gatherings
+    </span>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight mb-6">
+      Got The Occasion?<br/>We’ve Got The Space.
+    </h2>
+<p class="text-stone-300 font-light text-base lg:text-lg max-w-2xl mx-auto leading-relaxed mb-10">From open-air garden soirees and sunset cocktail receptions to private family celebrations under the canopy, our ECR team curates unforgettable coastal gatherings.</p>
+<a class="inline-block bg-white hover:bg-stone-100 text-[#2f402c] text-xs uppercase tracking-widest-plus font-bold px-9 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg active:scale-95" href="https://wa.me/918754476660?text=Hi%20Kraft%20Collective,%20I%20would%20like%20to%20inquire%20about%20booking%20an%20event%20at%20ECR" rel="noopener noreferrer" target="_blank">
+      Explore Events &amp; Space
+    </a>
+</div>
+</section>
+<!-- END: BespokeGatherings -->
+<!-- BEGIN: Testimonials -->
+<section class="py-24 bg-[#FAF8F5] reveal-on-scroll is-visible">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-brand-olive text-xs uppercase tracking-widest-plus font-semibold block mb-2">
+        Kind Words
+      </span>
+<h2 class="font-serif text-4xl sm:text-5xl text-brand-charcoal font-normal">
+        Loved by Chennai
+      </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-2xl border border-stone-200/70 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="text-amber-500 text-sm tracking-widest mb-4">★★★★★</div>
+<p class="font-serif italic text-stone-700 text-base leading-relaxed mb-6">“The open garden atmosphere at ECR is pure bliss. Sipping their specialty pour-over amidst lush greenery feels like an instant weekend getaway from Chennai.”</p>
+</div>
+<div>
+<h4 class="font-semibold text-xs tracking-wider uppercase text-brand-charcoal">Maya Krishnan</h4>
+<p class="text-[11px] text-stone-500 font-medium">Coastal Brunch Enthusiast</p>
+</div>
+</div>
+<div class="bg-white p-8 rounded-2xl border border-stone-200/70 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="text-amber-500 text-sm tracking-widest mb-4">★★★★★</div>
+<p class="font-serif italic text-stone-700 text-base leading-relaxed mb-6">“Hosted our family anniversary lunch at Kreate ECR. The wood-fired pizza, pan-seared sea bass, and warm breezy service made it truly unforgettable.”</p>
+</div>
+<div>
+<h4 class="font-semibold text-xs tracking-wider uppercase text-brand-charcoal">Arvind Sundaram</h4>
+<p class="text-[11px] text-stone-500 font-medium">Family Host</p>
+</div>
+</div>
+<div class="bg-white p-8 rounded-2xl border border-stone-200/70 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="text-amber-500 text-sm tracking-widest mb-4">★★★★★</div>
+<p class="font-serif italic text-stone-700 text-base leading-relaxed mb-6">“Hands down Chennai's best outdoor café experience. The sea breeze, natural ambience, and mango passion fruit brioche are simply unmatched.”</p>
+</div>
+<div>
+<h4 class="font-semibold text-xs tracking-wider uppercase text-brand-charcoal">Deepa Radhakrishnan</h4>
+<p class="text-[11px] text-stone-500 font-medium">Food &amp; Travel Writer</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Testimonials -->
+<!-- BEGIN: VisitUs -->
+<section class="py-20 bg-[#F5F2ED] border-t border-stone-200 reveal-on-scroll is-visible" id="location">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="bg-white rounded-3xl border border-stone-200/80 p-8 sm:p-12 lg:p-16 shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Info Details -->
+<div class="lg:col-span-6 space-y-6">
+<span class="text-brand-olive text-xs uppercase tracking-widest-plus font-semibold block">
+            Visit Us
+          </span>
+<h2 class="font-serif text-3xl sm:text-4xl text-brand-charcoal font-normal">
+            Find Your Table in Chennai
+          </h2>
+<div class="space-y-5 text-sm text-stone-600 font-normal">
+<div class="flex items-start space-x-3">
+<svg class="w-5 h-5 text-brand-olive shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+<div class="">
+<strong class="font-medium text-brand-charcoal block">Kreate by Kraft – ECR</strong>
+                R6RR+289 Bus Stop, Meeran Nagar, Kannathur Reddy Kuppam, Chennai, TN 603112
+              </div>
+</div>
+<div class="flex items-start space-x-3">
+<svg class="w-5 h-5 text-brand-olive shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+<div class="">
+<strong class="font-medium text-brand-charcoal block">Operating Hours</strong>
+                Monday – Sunday: 11:00 AM – 11:00 PM<br/>
+<span class="text-stone-500 text-xs">Complimentary valet &amp; ample parking available</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<svg class="w-5 h-5 text-brand-olive shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+<div>
+<strong class="font-medium text-brand-charcoal block">Concierge &amp; Reservations</strong>
+<a class="hover:underline font-medium text-brand-olive" href="tel:+918754476660">+91 87544 76660</a>
+</div>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="pt-4 flex flex-wrap gap-4">
+<a class="bg-brand-olive hover:bg-brand-oliveDark text-white text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-200 shadow-sm active:scale-95" href="https://www.google.com/maps/search/?api=1&amp;query=Kreate+by+Kraft+ECR+R6RR%2B289+Bus+Stop+Meeran+Nagar+Kannathur+Reddy+Kuppam+Chennai+603112" rel="noopener noreferrer" target="_blank">
+              Get Directions
+            </a>
+<a class="border border-stone-300 hover:border-brand-charcoal text-brand-charcoal text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded-full transition-colors active:scale-95" href="tel:+918754476660">
+              Call Us
+            </a>
+</div>
+</div>
+<!-- Right Visual Map Card -->
+<div class="lg:col-span-6">
+<a class="block w-full h-80 rounded-2xl bg-stone-200 border border-stone-300 relative overflow-hidden flex items-center justify-center p-6 text-center group cursor-pointer hover:border-brand-olive transition-colors" href="https://www.google.com/maps/search/?api=1&amp;query=Kreate+by+Kraft+ECR+R6RR%2B289+Bus+Stop+Meeran+Nagar+Kannathur+Reddy+Kuppam+Chennai+603112" rel="noopener noreferrer" target="_blank">
+<!-- Subtle pattern backdrop -->
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(#3e5338_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<div class="relative bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl max-w-sm w-full border border-stone-100 group-hover:scale-[1.02] transition-transform">
+<div class="w-12 h-12 bg-brand-olive/10 text-brand-olive rounded-full flex items-center justify-center mx-auto mb-3">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path></svg>
+</div>
+<h4 class="font-serif text-lg font-semibold text-brand-charcoal">Kreate by Kraft – ECR</h4>
+<p class="text-xs text-stone-500 mt-1 mb-4">Kannathur Reddy Kuppam, Chennai</p>
+<span class="text-[11px] font-bold uppercase tracking-widest text-brand-olive group-hover:underline block">Open in Google Maps →</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: VisitUs -->
+<!-- BEGIN: FinalCTA -->
+<section class="relative py-28 overflow-hidden reveal-on-scroll is-visible">
+<div class="absolute inset-0 z-0">
+<img alt="Warm evening restaurant table" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCy8_MEZsUu2eSS5iN3xcWlCARhJN4sSwHRjlOMuAayoIwcywQAvnVm3hGMz6SwboIJVGOa6RcmhjuEiNggDLVO9mzc4cNkhy7UFFAA7JifW2wmTQ-NRyG5T9JQHybOVCqe8zonUTg8YX38YmV7wIPsrJk2tGJx857vMYyl-jJ8bOmV_lRr1UByfBdpsy5QcmPEUUIxcw388ezHNwRtKQ0Nyy5N9xromUTpFMUDHHKwEGFWwvSyRYn6M_Qi0jgieslOf1uzyXQ7TfxvQ"/>
+<div class="absolute inset-0 bg-stone-950/80"></div>
+</div>
+<div class="relative z-10 max-w-3xl mx-auto px-6 text-center text-white">
+<span class="text-brand-gold text-xs uppercase tracking-widest-plus font-semibold block mb-4">
+      Reserve In Advance
+    </span>
+<h2 class="font-serif text-4xl sm:text-6xl font-normal leading-tight mb-6">Make Your Next Escape<br/>A Kraft Experience.</h2>
+<p class="text-stone-300 font-light text-base sm:text-lg mb-8 max-w-xl mx-auto">Join us for leisurely coastal brunches, slow afternoons under the greenery, and unforgettable dining moments.</p>
+<a class="inline-block bg-brand-olive hover:bg-brand-oliveLight active:scale-95 text-white text-xs uppercase font-bold tracking-widest-plus px-9 py-4 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5" href="https://wa.me/918754476660?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Kreate%20by%20Kraft%20ECR" rel="noopener noreferrer" target="_blank">
+      Reserve a Table
+    </a>
+</div>
+</section>
+<!-- END: FinalCTA -->
+</main>
+<!-- BEGIN: Footer -->
+<footer class="bg-white border-t border-stone-200 text-stone-600 text-xs">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+<!-- Brand Info -->
+<div class="lg:col-span-2 space-y-4">
+<span class="font-serif-title text-2xl text-brand-charcoal block">Kraft Collective</span>
+<p class="text-stone-500 font-light text-xs leading-relaxed max-w-sm">
+          Chennai's premium hospitality and lifestyle collective. Thoughtfully curated cafés, dining destinations, and creative spaces where unforgettable moments take shape.
+        </p>
+<div class="pt-2 text-stone-400 text-[11px]">
+          © 2025 Kraft Collective. All rights reserved.
+        </div>
+</div>
+<!-- Sister Outlets -->
+<div>
+<h5 class="text-brand-charcoal font-semibold uppercase text-[11px] tracking-wider mb-4">Sister Outlets</h5>
+<ul class="space-y-2 text-stone-500">
+<li class="">
+<a class="font-semibold text-brand-olive flex items-center space-x-1.5" href="#home">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-olive"></span>
+<span class="">Kreate by Kraft – ECR</span>
+</a>
+</li>
+<li class=""><a class="hover:text-brand-olive transition-colors" href="https://instagram.com" rel="noopener noreferrer" target="_blank">Kraft – Nandanam</a></li>
+<li class=""><a class="hover:text-brand-olive transition-colors" href="https://instagram.com" rel="noopener noreferrer" target="_blank">The Brunch Theory – KNK</a></li>
+</ul>
+</div>
+<!-- Explore -->
+<div>
+<h5 class="text-brand-charcoal font-semibold uppercase text-[11px] tracking-wider mb-4">Explore</h5>
+<ul class="space-y-2 text-stone-500">
+<li class=""><a class="hover:text-brand-olive transition-colors" href="#about">About ECR</a></li>
+<li class=""><a class="hover:text-brand-olive transition-colors" href="#menu">Seasonal Menus</a></li>
+<li class=""><a class="hover:text-brand-olive transition-colors" href="#gallery">Interior Gallery</a></li>
+<li class=""><a class="hover:text-brand-olive transition-colors" href="#events">Private Events</a></li>
+</ul>
+</div>
+<!-- Concierge -->
+<div>
+<h5 class="text-brand-charcoal font-semibold uppercase text-[11px] tracking-wider mb-4">Concierge</h5>
+<ul class="space-y-2 text-stone-500">
+<li class="">R6RR+289 Bus Stop, Meeran Nagar,</li>
+<li class="">Kannathur Reddy Kuppam, Chennai</li>
+<li class="pt-2"><a class="font-semibold text-brand-olive hover:underline block" href="tel:+918754476660">+91 87544 76660</a></li>
+<li class=""><a class="hover:underline" href="mailto:hello@kraftcollective.in">hello@kraftcollective.in</a></li>
+</ul>
+</div>
+</div>
+<!-- Legal bottom strip -->
+<div class="mt-12 pt-8 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-400">
+<p class="">Best Garden Café &amp; Coastal Restaurant on East Coast Road, Chennai.</p>
+<div class="flex space-x-6 mt-4 sm:mt-0">
+<a class="hover:text-stone-600 transition-colors" href="#about">Privacy Policy</a>
+<a class="hover:text-stone-600 transition-colors" href="#about">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+<!-- Floating Quick Action Buttons -->
+<a aria-label="Instagram" class="fixed bottom-8 right-8 z-[100] w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 active:scale-95 transition-all group backdrop-blur-sm" href="https://instagram.com/kraftcollective.in" rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 148, 51, 0.9) 0%, rgba(230, 104, 60, 0.9) 25%, rgba(220, 39, 67, 0.9) 50%, rgba(204, 35, 102, 0.9) 75%, rgba(188, 24, 136, 0.9) 100%); border: 1px solid rgba(255, 255, 255, 0.35); box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 25px -5px;" target="_blank">
+<svg class="group-hover:rotate-12 transition-transform duration-300" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="28">
+<rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+<line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+</svg>
+</a>
+<!-- ==================== MODALS & LIGHTBOX ==================== -->
+<!-- FULL MENU MODAL -->
+<div class="fixed inset-0 z-50 hidden overflow-y-auto bg-stone-950/70 backdrop-blur-sm p-4 sm:p-6 lg:p-10 flex items-center justify-center" id="menuModal"><div class="bg-[#FAF8F5] text-brand-charcoal w-full max-w-5xl max-h-[92vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col relative border border-stone-200">
+<!-- Modal Header -->
+<div class="px-6 sm:px-10 py-5 border-b border-stone-200 flex items-center justify-between sticky top-0 bg-[#FAF8F5]/95 backdrop-blur z-20">
+<div>
+<span class="text-brand-olive text-[10px] uppercase font-bold tracking-widest block">Kreate by Kraft • ECR</span>
+<h3 class="font-serif text-2xl sm:text-3xl text-brand-charcoal">Complete ECR Menu</h3>
+</div>
+<button aria-label="Close Menu" class="p-2 text-stone-500 hover:text-brand-charcoal rounded-full hover:bg-stone-200/50 transition-colors" id="closeMenuModalBtn">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<!-- Category Navigation Tabs (internal modal scroller) -->
+<div class="px-6 sm:px-10 py-3 bg-[#F5F2ED] border-b border-stone-200 flex items-center space-x-2 overflow-x-auto no-scrollbar shrink-0 z-10 scroll-smooth" id="menu-category-nav">
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-white bg-brand-olive transition-colors shadow-sm" data-target="cat-all-day-breakfast" type="button">All Day Breakfast</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-soups-salads" type="button">Soups &amp; Salads</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-veg-starters" type="button">Vegetarian Starters</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-non-veg-starters" type="button">Non-Veg Starters</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-pasta" type="button">Pasta</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-grills" type="button">Grills</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-free px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-between-breads" type="button">Between Breads</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-bao-buns" type="button">Bao Buns</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-pizzas" type="button">Pizzas</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-southern-specials" type="button">Southern Specials</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-asian-bowls" type="button">Asian Bowls</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-desserts" type="button">In House Special Desserts</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-brews" type="button">Hot / Cold Brews</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-beverages" type="button">Beverages</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-mocktails" type="button">Mocktails</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-fresh-juice" type="button">Fresh Juice</button>
+<button class="modal-cat-tab shrink-0 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-stone-700 bg-white hover:bg-brand-olive hover:text-white transition-colors shadow-sm" data-target="cat-thick-shakes" type="button">Thick Shakes</button>
+</div>
+<!-- Modal Content (All 17 Categories) -->
+<div class="p-6 sm:p-10 overflow-y-auto space-y-12 text-stone-700 scroll-smooth" id="menuModalScrollable">
+<!-- 1. ALL DAY BREAKFAST -->
+<div class="pt-2" id="cat-all-day-breakfast">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">All Day Breakfast</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">ECR Signature</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">The Kraft Loaded Omelette</h5><p class="text-xs text-stone-500 mt-1">Triple farm eggs, caramelized onions, wild mushrooms, aged cheddar, toasted sourdough.</p></div>
+<div><h5 class="font-medium text-stone-900">Shakshuka</h5><p class="text-xs text-stone-500 mt-1">Poached country eggs in spiced crushed tomato, roasted peppers, cumin, feta &amp; warm pita.</p></div>
+<div><h5 class="font-medium text-stone-900">Chicken Waffling</h5><p class="text-xs text-stone-500 mt-1">Buttermilk fried chicken strips perched over golden Belgian waffle, spiced maple reduction.</p></div>
+<div><h5 class="font-medium text-stone-900">Turkish Cilbir Eggs</h5><p class="text-xs text-stone-500 mt-1">Garlic herb hung yogurt, poached eggs, warm Aleppo chili butter, toasted simit bread.</p></div>
+</div>
+</div>
+<!-- 2. SOUPS & SALADS -->
+<div class="pt-2" id="cat-soups-salads">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Soups &amp; Salads</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Bowls of Freshness</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Chicken &amp; Leek Soup</h5><p class="text-xs text-stone-500 mt-1">Slow-simmered leeks, shredded roasted chicken, herb emulsion, crisp shallots.</p></div>
+<div><h5 class="font-medium text-stone-900">Mushroom &amp; Truffle Soup</h5><p class="text-xs text-stone-500 mt-1">Pureed button and porcini mushrooms laced with black truffle oil, thyme dust.</p></div>
+<div><h5 class="font-medium text-stone-900">Slow Cooked Chicken Salad</h5><p class="text-xs text-stone-500 mt-1">Sous-vide chicken breast, crisp lettuce, cherry tomatoes, shaved parmesan, honey Dijon.</p></div>
+<div><h5 class="font-medium text-stone-900">Heirloom Burrata Salad</h5><p class="text-xs text-stone-500 mt-1">Fresh artisanal burrata, heirloom tomatoes, basil pesto drizzle, balsamic glaze.</p></div>
+</div>
+</div>
+<!-- 3. VEGETARIAN STARTERS -->
+<div class="pt-2" id="cat-veg-starters">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Vegetarian Starters</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Small Plates</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Paneer Kunafa</h5><p class="text-xs text-stone-500 mt-1">Crisp shredded pastry wrapped around spiced malai paneer, mint yogurt dip.</p></div>
+<div><h5 class="font-medium text-stone-900">Chilli Oil Mushroom Bruschetta</h5><p class="text-xs text-stone-500 mt-1">Charred sourdough topped with garlic sautéed mushrooms and house chili oil.</p></div>
+<div><h5 class="font-medium text-stone-900">Mangalore Ghee Roast Paneer</h5><p class="text-xs text-stone-500 mt-1">Cottage cheese cubes tossed in spicy Byadgi chili and pure ghee reduction.</p></div>
+<div><h5 class="font-medium text-stone-900">Truffle Polenta Bites</h5><p class="text-xs text-stone-500 mt-1">Golden pan-seared corn polenta cakes, truffle cream dip, micro herbs.</p></div>
+</div>
+</div>
+<!-- 4. NON-VEGETARIAN STARTERS -->
+<div class="pt-2" id="cat-non-veg-starters">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Non-Vegetarian Starters</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Signatures</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Peri Peri Chicken Bullets</h5><p class="text-xs text-stone-500 mt-1">Crispy marinated chicken bites spiced with African peri-peri and cilantro mayo.</p></div>
+<div><h5 class="font-medium text-stone-900">Mangalore Ghee Roast Chicken</h5><p class="text-xs text-stone-500 mt-1">Tender chicken cooked down in aromatic Kundapur masala and pure ghee.</p></div>
+<div><h5 class="font-medium text-stone-900">Korean Fried Chicken</h5><p class="text-xs text-stone-500 mt-1">Extra crunchy twice-fried chicken bites coated in sticky sweet chili glaze.</p></div>
+<div><h5 class="font-medium text-stone-900">Calamari Fritti</h5><p class="text-xs text-stone-500 mt-1">Flash-fried coast squid rings dusted with sea salt, lemon aioli dip.</p></div>
+</div>
+</div>
+<!-- 5. PASTA -->
+<div class="pt-2" id="cat-pasta">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Pasta</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Freshly Prepared</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Formaggi</h5><p class="text-xs text-stone-500 mt-1">Quattro formaggi creamy sauce with aged parmesan, mozzarella, and gorgonzola hint.</p></div>
+<div><h5 class="font-medium text-stone-900">Pesto Cream</h5><p class="text-xs text-stone-500 mt-1">Fresh basil pine nut pesto folded into delicate light cream and garlic.</p></div>
+<div><h5 class="font-medium text-stone-900">Aurora</h5><p class="text-xs text-stone-500 mt-1">Rich Italian pink sauce blending San Marzano marinara with fresh dairy cream.</p></div>
+<div><h5 class="font-medium text-stone-900">Spaghetti Aglio e Olio</h5><p class="text-xs text-stone-500 mt-1">Garlic confit, chili flakes, Italian flat parsley, cold pressed olive oil.</p></div>
+</div>
+</div>
+<!-- 6. GRILLS -->
+<div class="pt-2" id="cat-grills">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Grills</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Charred &amp; Sizzling</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Bang Bang Paneer Steak</h5><p class="text-xs text-stone-500 mt-1">Thick slab of paneer charred over fire with fiery Asian spiced bang bang sauce.</p></div>
+<div><h5 class="font-medium text-stone-900">Telicherry Grill</h5><p class="text-xs text-stone-500 mt-1">Pepper-rubbed tender chicken skewers char-grilled with coastal herbs.</p></div>
+<div><h5 class="font-medium text-stone-900">Grilled Pesto Butter Fish</h5><p class="text-xs text-stone-500 mt-1">Fresh local coastal catch basted in fragrant basil herb butter, charred greens.</p></div>
+<div><h5 class="font-medium text-stone-900">Chermoula Spiced Prawns</h5><p class="text-xs text-stone-500 mt-1">Jumbo prawns grilled with North African herb rub and lemon wedges.</p></div>
+</div>
+</div>
+<!-- 7. BETWEEN BREADS -->
+<div class="pt-2" id="cat-between-breads">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Between Breads</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Sandwiches &amp; Burgers</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Japanese Egg Sando</h5><p class="text-xs text-stone-500 mt-1">Creamy boiled egg salad with kewpie mayonnaise between milk bread slices.</p></div>
+<div><h5 class="font-medium text-stone-900">Korean Fried Chicken Burger</h5><p class="text-xs text-stone-500 mt-1">Gochujang-glazed crispy chicken thigh, kimchi slaw, pickled onions, brioche bun.</p></div>
+<div><h5 class="font-medium text-stone-900">BBQ Pulled Beef Burger</h5><p class="text-xs text-stone-500 mt-1">Slow-cooked tender shredded beef in smoky house glaze, cheddar melt, pickles.</p></div>
+<div><h5 class="font-medium text-stone-900">Mushroom &amp; Truffle Melt</h5><p class="text-xs text-stone-500 mt-1">Sautéed mushrooms, caramelized onions, Gruyère cheese, seeded sourdough.</p></div>
+</div>
+</div>
+<!-- 8. BAO BUNS -->
+<div class="pt-2" id="cat-bao-buns">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Bao Buns</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Steamed Pillows</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Crispy Cauliflower Bao</h5><p class="text-xs text-stone-500 mt-1">Spiced crunchy cauliflower florets, sriracha mayo, fresh cucumber pickle.</p></div>
+<div><h5 class="font-medium text-stone-900">Tempura Prawn Bao</h5><p class="text-xs text-stone-500 mt-1">Light and crisp coastal prawn tempura, sweet soy unagi glaze, scallions.</p></div>
+<div><h5 class="font-medium text-stone-900">Thai Basil Chicken Bao</h5><p class="text-xs text-stone-500 mt-1">Wok-tossed minced chicken with Thai holy basil, crispy shallots, birds eye chili.</p></div>
+<div><h5 class="font-medium text-stone-900">Braised Mushroom Teriyaki Bao</h5><p class="text-xs text-stone-500 mt-1">Glazed shiitake mushrooms, toasted sesame, pickled daikon radish.</p></div>
+</div>
+</div>
+<!-- 9. PIZZAS -->
+<div class="pt-2" id="cat-pizzas">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Pizzas</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Wood-Fired Neapolitan</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Margherita Classic</h5><p class="text-xs text-stone-500 mt-1">San Marzano tomato sauce, fior di latte mozzarella, fresh sweet basil leaves, olive oil.</p></div>
+<div><h5 class="font-medium text-stone-900">Peri Peri Pizza</h5><p class="text-xs text-stone-500 mt-1">Peri-peri marinated chicken, roasted bell peppers, red onions, smoked scamorza.</p></div>
+<div><h5 class="font-medium text-stone-900">Truffle &amp; Mushroom Pizza</h5><p class="text-xs text-stone-500 mt-1">Wild forest mushrooms, white truffle cream, mozzarella, thyme leaves, parmesan.</p></div>
+<div><h5 class="font-medium text-stone-900">Burrata &amp; Pesto Pizza</h5><p class="text-xs text-stone-500 mt-1">Crisp base topped with fresh burrata, Genovese pesto, roasted pine nuts, chili flakes.</p></div>
+</div>
+</div>
+<!-- 10. SOUTHERN SPECIALS -->
+<div class="pt-2" id="cat-southern-specials">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Southern Specials</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Coastal Heritage</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Kerala Beef Curry</h5><p class="text-xs text-stone-500 mt-1">Slow-cooked tender beef with roasted coconut slices, fennel seeds and Malabar spices.</p></div>
+<div><h5 class="font-medium text-stone-900">Prawn / Fish Moilee</h5><p class="text-xs text-stone-500 mt-1">Delicate coconut milk stew with ginger, green chillies, turmeric and fresh coastal catch.</p></div>
+<div><h5 class="font-medium text-stone-900">Curd Rice with Potato Varuval</h5><p class="text-xs text-stone-500 mt-1">Velvety mustard-tempered curd rice paired with spicy crisp Chettinad potato fry.</p></div>
+<div><h5 class="font-medium text-stone-900">Chicken Pepper Fry</h5><p class="text-xs text-stone-500 mt-1">Dry-roasted chicken cubes tossed with crushed Tellicherry peppercorns and curry leaves.</p></div>
+</div>
+</div>
+<!-- 11. ASIAN BOWLS -->
+<div class="pt-2" id="cat-asian-bowls">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Asian Bowls</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Comfort Bowls</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Mi Goreng</h5><p class="text-xs text-stone-500 mt-1">Traditional Indonesian wok noodles tossed with kecap manis, greens, fried shallots.</p></div>
+<div><h5 class="font-medium text-stone-900">Thai Curry Bowl</h5><p class="text-xs text-stone-500 mt-1">Rich fragrant green or red coconut curry served with steamed jasmine rice.</p></div>
+<div><h5 class="font-medium text-stone-900">Chicken Katsu Curry</h5><p class="text-xs text-stone-500 mt-1">Crisp crumbed chicken fillet over sticky rice with sweet and savory Japanese curry.</p></div>
+<div><h5 class="font-medium text-stone-900">Nasi Goreng</h5><p class="text-xs text-stone-500 mt-1">Indonesian spiced fried rice with chicken skewers, fried egg, cucumber and prawn crackers.</p></div>
+</div>
+</div>
+<!-- 12. IN HOUSE SPECIAL DESSERTS -->
+<div class="pt-2" id="cat-desserts">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">In House Special Desserts</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Sweet Endings</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Biscoff Cheesecake</h5><p class="text-xs text-stone-500 mt-1">Decadent baked cheesecake topped with smooth Lotus Biscoff spread and biscuit crumb.</p></div>
+<div><h5 class="font-medium text-stone-900">Tiramisu</h5><p class="text-xs text-stone-500 mt-1">Classic Italian espresso soaked ladyfingers layered with velvety mascarpone custard.</p></div>
+<div><h5 class="font-medium text-stone-900">Chocolate Lava</h5><p class="text-xs text-stone-500 mt-1">Warm chocolate cake with a molten center of 70% dark chocolate ganache.</p></div>
+<div><h5 class="font-medium text-stone-900">Berry Pavlova</h5><p class="text-xs text-stone-500 mt-1">Crisp meringue shell, passion fruit coulis, fresh seasonal berries, vanilla cream.</p></div>
+</div>
+</div>
+<!-- 13. HOT BREWS / COLD BREWS -->
+<div class="pt-2" id="cat-brews">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Hot Brews / Cold Brews</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Specialty Barista</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Americano</h5><p class="text-xs text-stone-500 mt-1">Carefully pulled double espresso diluted with hot water for crisp caramel clarity.</p></div>
+<div><h5 class="font-medium text-stone-900">Flat White</h5><p class="text-xs text-stone-500 mt-1">Silky smooth textured milk over double ristretto extraction.</p></div>
+<div><h5 class="font-medium text-stone-900">Biscoff Cold Coffee</h5><p class="text-xs text-stone-500 mt-1">Rich cold brew coffee blended with Belgian speculoos spread and chilled milk.</p></div>
+<div><h5 class="font-medium text-stone-900">Nitro Cold Brew Tonic</h5><p class="text-xs text-stone-500 mt-1">Nitrogen-infused smooth cold coffee poured over sparkling tonic and fresh orange slice.</p></div>
+</div>
+</div>
+<!-- 14. BEVERAGES -->
+<div class="pt-2" id="cat-beverages">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Beverages</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Refreshing Refreshers</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Virjin Mojito</h5><p class="text-xs text-stone-500 mt-1">Classic crushed mint, lime juice, brown cane sugar, topped with sparkling soda.</p></div>
+<div><h5 class="font-medium text-stone-900">Iced Lemon Peach Tea</h5><p class="text-xs text-stone-500 mt-1">Slow-steeped Assam black tea infused with white peach puree and lemon.</p></div>
+<div><h5 class="font-medium text-stone-900">Hibiscus Iced Brew</h5><p class="text-xs text-stone-500 mt-1">Tart floral hibiscus cold infusion, apple syrup, sparkling water.</p></div>
+<div><h5 class="font-medium text-stone-900">Coconut Water Punch</h5><p class="text-xs text-stone-500 mt-1">Tender coastal coconut water, chia seeds, fresh lime squeeze and mint.</p></div>
+</div>
+</div>
+<!-- 15. MOCKTAILS -->
+<div class="pt-2" id="cat-mocktails">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Mocktails</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Curated Zero-Proof</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Botanical Cucumber Mint Cooler</h5><p class="text-xs text-stone-500 mt-1">Pressed English cucumber, bruised garden mint, elderflower cordial, sparkling water.</p></div>
+<div><h5 class="font-medium text-stone-900">Yuzu Elderflower Splash</h5><p class="text-xs text-stone-500 mt-1">Japanese citrus yuzu, French elderflower extract, fresh thyme, tonic water.</p></div>
+<div><h5 class="font-medium text-stone-900">Passion Fruit Jalapeño Fizz</h5><p class="text-xs text-stone-500 mt-1">Tropical passion fruit pulp shaken with mild charred jalapeño slice, lime, soda.</p></div>
+<div><h5 class="font-medium text-stone-900">Berry Basil Smash</h5><p class="text-xs text-stone-500 mt-1">Muddled mixed berries, purple basil leaves, cranberry juice, crushed ice.</p></div>
+</div>
+</div>
+<!-- 16. FRESH JUICE -->
+<div class="pt-2" id="cat-fresh-juice">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Fresh Juice</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">100% Cold-Pressed</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Watermelon Juice</h5><p class="text-xs text-stone-500 mt-1">Pure cold-pressed fresh watermelon, rock salt, mint leaf garnish.</p></div>
+<div><h5 class="font-medium text-stone-900">Valencia Orange Juice</h5><p class="text-xs text-stone-500 mt-1">Freshly extracted sweet citrus juice, zero added sugar.</p></div>
+<div><h5 class="font-medium text-stone-900">Pineapple &amp; Mint Juice</h5><p class="text-xs text-stone-500 mt-1">Sweet tropical pineapple crushed with bruised garden mint.</p></div>
+<div><h5 class="font-medium text-stone-900">Green Cleanser</h5><p class="text-xs text-stone-500 mt-1">Green apple, cucumber, celery, ginger and fresh lime juice.</p></div>
+</div>
+</div>
+<!-- 17. THICK SHAKES -->
+<div class="pt-2" id="cat-thick-shakes">
+<div class="border-b border-stone-300 pb-2 mb-6 flex justify-between items-baseline">
+<h4 class="font-serif text-2xl text-brand-charcoal">Thick Shakes</h4>
+<span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Indulgent Blends</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+<div><h5 class="font-medium text-stone-900">Lotus Biscoff Shake</h5><p class="text-xs text-stone-500 mt-1">Creamy vanilla dairy base blended with generous Belgian speculoos spread and crumbles.</p></div>
+<div><h5 class="font-medium text-stone-900">Belgian Dark Chocolate Shake</h5><p class="text-xs text-stone-500 mt-1">Rich 70% dark chocolate melted into cream, cocoa nibs, whipped topping.</p></div>
+<div><h5 class="font-medium text-stone-900">Roasted Hazelnut Nutella Shake</h5><p class="text-xs text-stone-500 mt-1">Creamy hazelnut cocoa spread churned with roasted hazelnut butter.</p></div>
+<div><h5 class="font-medium text-stone-900">Salted Caramel Pretzel Shake</h5><p class="text-xs text-stone-500 mt-1">House-made salted butter caramel spun with crushed salted pretzels.</p></div>
+</div>
+</div>
+</div>
+</div></div>
+<!-- FULLSCREEN LIGHTBOX -->
+<!-- JAVASCRIPT: Interactivity, Navigation, Modals & Animations -->
+<script>
+  // 1. Mobile Menu Functionality
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const hamburgerIcon = document.getElementById('hamburgerIcon');
+  const closeNavIcon = document.getElementById('closeNavIcon');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function toggleMobileMenu() {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    if (isHidden) {
+      mobileMenu.classList.remove('hidden');
+      hamburgerIcon.classList.add('hidden');
+      closeNavIcon.classList.remove('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    } else {
+      mobileMenu.classList.add('hidden');
+      hamburgerIcon.classList.remove('hidden');
+      closeNavIcon.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      hamburgerIcon.classList.remove('hidden');
+      closeNavIcon.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // 2. Navbar Styling on Scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      navbar.classList.add('shadow-sm', 'bg-[#FAF8F5]/95');
+      navbar.classList.remove('bg-[#FAF8F5]/90');
+    } else {
+      navbar.classList.remove('shadow-sm', 'bg-[#FAF8F5]/95');
+      navbar.classList.add('bg-[#FAF8F5]/90');
+    }
+  });
+
+  // 3. Scroll Reveal Animation via IntersectionObserver
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => observer.observe(el));
+
+  // 4. Full Menu Modal Handlers & Synchronized Horizontal/Vertical Navigation
+  const openMenuModalBtn = document.getElementById('openMenuModalBtn');
+  const closeMenuModalBtn = document.getElementById('closeMenuModalBtn');
+  const menuModal = document.getElementById('menuModal');
+  const menuNavContainer = document.getElementById('menu-category-nav');
+  const menuScrollable = document.getElementById('menuModalScrollable');
+  const catTabs = document.querySelectorAll('.modal-cat-tab');
+
+  function scrollTabIntoView(tabElement, navContainer) {
+    if (!tabElement || !navContainer) return;
+    const scrollLeftTarget = tabElement.offsetLeft - (navContainer.clientWidth / 2) + (tabElement.offsetWidth / 2);
+    navContainer.scrollTo({
+      left: Math.max(0, scrollLeftTarget),
+      behavior: 'smooth'
+    });
+  }
+
+  function setActiveTab(tabElement) {
+    if (!tabElement) return;
+    catTabs.forEach(tab => {
+      tab.classList.remove('bg-brand-olive', 'text-white');
+      tab.classList.add('bg-white', 'text-stone-700');
+    });
+    tabElement.classList.remove('bg-white', 'text-stone-700');
+    tabElement.classList.add('bg-brand-olive', 'text-white');
+  }
+
+  let isAutoScrolling = false;
+  let autoScrollTimeout = null;
+
+  catTabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = tab.getAttribute('data-target');
+      const targetElem = document.getElementById(targetId);
+      
+      setActiveTab(tab);
+      scrollTabIntoView(tab, menuNavContainer);
+
+      if (targetElem && menuScrollable) {
+        isAutoScrolling = true;
+        clearTimeout(autoScrollTimeout);
+        
+        // Calculate position inside the modal scrollable container
+        const targetTop = targetElem.offsetTop - menuScrollable.offsetTop;
+        menuScrollable.scrollTo({
+          top: Math.max(0, targetTop),
+          behavior: 'smooth'
+        });
+
+        autoScrollTimeout = setTimeout(() => {
+          isAutoScrolling = false;
+        }, 600);
+      }
+    });
+  });
+
+  // Vertical scroll sync to highlight and center the horizontal tab
+  if (menuScrollable) {
+    menuScrollable.addEventListener('scroll', () => {
+      if (isAutoScrolling) return;
+
+      const currentScrollTop = menuScrollable.scrollTop;
+      const categories = Array.from(catTabs).map(tab => {
+        const el = document.getElementById(tab.getAttribute('data-target'));
+        return {
+          tab,
+          top: el ? (el.offsetTop - menuScrollable.offsetTop) : 0
+        };
+      });
+
+      // Find category closest to top threshold
+      let activeCategory = categories[0];
+      for (let i = 0; i < categories.length; i++) {
+        if (currentScrollTop >= categories[i].top - 80) {
+          activeCategory = categories[i];
+        } else {
+          break;
+        }
+      }
+
+      if (activeCategory && !activeCategory.tab.classList.contains('bg-brand-olive')) {
+        setActiveTab(activeCategory.tab);
+        scrollTabIntoView(activeCategory.tab, menuNavContainer);
+      }
+    }, { passive: true });
+  }
+
+  function openMenu() {
+    menuModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    // Reset to first tab and scroll to top
+    if (catTabs.length > 0) {
+      setActiveTab(catTabs[0]);
+      if (menuNavContainer) menuNavContainer.scrollTo({ left: 0, behavior: 'smooth' });
+    }
+    if (menuScrollable) {
+      menuScrollable.scrollTop = 0;
+    }
+  }
+
+  function closeMenu() {
+    menuModal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  if (openMenuModalBtn) openMenuModalBtn.addEventListener('click', openMenu);
+  if (closeMenuModalBtn) closeMenuModalBtn.addEventListener('click', closeMenu);
+
+  menuModal.addEventListener('click', (e) => {
+    if (e.target === menuModal) closeMenu();
+  });
+
+  // 5. Gallery Lightbox Functionality
+  const galleryItems = [
+    {
+      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBAS1j6S4wSeu0s2qdpTNd_V-OjLHDxxeIMylAA9timOvIgNdKduifApJUFb6Oxv1Xx-KicZ1L7f_2I4NO71XtkmnDU2Sla5PwQdldjSs_azV-e131oJKwTmxp00IsHEM4l7MVbsHF2MQE8qtPfJoOV2xhXegOisVjjQ-slwXBWHSyQWEIhScdNpn44-kFU-Aeohlgo-HgtRezf8JDXFjKcTlkZhBMHGU0mUuh-vhFfWcoLgodVqdA",
+      caption: "ECR Coastal Garden Seating & Veranda Pavilion"
+    },
+    {
+      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuChOQbLxSv899gB9C4h1VdL4xQNv9qbEm8MVX6drns6AYV9sD1jKZJKKl7zx71IE-QoGpVOUope9Al3VGhkg37d2tFJrranRikJ3OPYRNg_noTx4REHoufdRQf_EqhfbRdk8RfFvXdypoZH2Cji1OvB_Jy-XGbJh_q2xpxnfSdKBGVune69DfF1oLI0KIrYkXPNQlpidFT03OKssqaDd75hWcaiw0neMzbsQTkL12uSODcR4HAzwbU",
+      caption: "Artisanal Kitchen Craft & Plated Pan-Seared Sea Bass"
+    },
+    {
+      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuARWtaeT3WF-IdvowjwBXTpQUlfkO6MGtqP6IAhK5AEHR-12bJuo6kYZsk349lYGS8H0bWY6YZvulXaRHCM2WOa2eCG9hMiO5awlIz2FW8BHZst6Y9PW8FX4lPS2vlJ6nVThtc7XXgBBE9Gc4NPL_WnF9bTLN0ihX_VSoX3DVj2AaJZGLs063b64hrpYrskeYL0kQBBfTQUoZs5R3gcOOa1jDlysu4GKfVnjmjNfpekF5fG5-NqZJ4",
+      caption: "Layered Botanical Craft Cooler & Specialty Refreshments"
+    }
+  ];
+
+  let currentGalleryIndex = 0;
+  const lightboxModal = document.getElementById('lightboxModal');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const closeLightboxBtn = document.getElementById('closeLightboxBtn');
+  const prevLightboxBtn = document.getElementById('prevLightboxBtn');
+  const nextLightboxBtn = document.getElementById('nextLightboxBtn');
+
+  function openLightbox(index) {
+    currentGalleryIndex = index;
+    updateLightbox();
+    if (lightboxModal) lightboxModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (lightboxModal) lightboxModal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    if (!lightboxImage || !lightboxCaption) return;
+    const item = galleryItems[currentGalleryIndex];
+    lightboxImage.src = item.src;
+    lightboxCaption.textContent = item.caption;
+  }
+
+  function showNextImage() {
+    currentGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
+    updateLightbox();
+  }
+
+  function showPrevImage() {
+    currentGalleryIndex = (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length;
+    updateLightbox();
+  }
+
+  if (closeLightboxBtn) closeLightboxBtn.addEventListener('click', closeLightbox);
+  if (nextLightboxBtn) nextLightboxBtn.addEventListener('click', showNextImage);
+  if (prevLightboxBtn) prevLightboxBtn.addEventListener('click', showPrevImage);
+
+  if (lightboxModal) {
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) closeLightbox();
+    });
+  }
+
+  // 6. Global Keyboard Shortcuts (Escape to close modals/menus, Arrow keys for lightbox)
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeLightbox();
+      closeMenu();
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        toggleMobileMenu();
+      }
+    } else if (lightboxModal && !lightboxModal.classList.contains('hidden')) {
+      if (e.key === 'ArrowRight') showNextImage();
+      if (e.key === 'ArrowLeft') showPrevImage();
+    }
+  });
+</script>
+</body></html>
