@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Brunch Theory | Kraft Collective - KNK Road, Chennai</title>
+<!-- Google Fonts: EB Garamond (Serif Display) and Inter (Sans Clean) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FAF8F5',
+              creamDark: '#F3EFEA',
+              olive: '#3E5338',
+              oliveDark: '#2F402C',
+              oliveLight: '#4F6847',
+              charcoal: '#212121',
+              muted: '#6B6864',
+              gold: '#C5A880'
+            }
+          },
+          fontFamily: {
+            serif: ['"EB Garamond"', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+</script>
+<style data-purpose="custom-typography">
+    .font-serif-title {
+      font-family: 'EB Garamond', serif;
+    }
+    .tracking-widest-plus {
+      letter-spacing: 0.18em;
+    }
+    /* Infinite Ticker Animation */
+    @keyframes tickerSlide {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+    .ticker-track {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: tickerSlide 28s linear infinite;
+      will-change: transform;
+    }
+    .ticker-container:hover .ticker-track {
+      animation-play-state: paused;
+    }
+
+    /* Scroll reveal transitions */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Dotted leader for menu prices */
+    .menu-leader {
+      border-bottom: 1px dotted #c4c1bc;
+      flex-grow: 1;
+      margin: 0 0.6rem 0.3rem 0.6rem;
+    }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-track {
+        animation: none !important;
+      }
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Subtle pulse animation for floating actions */
+    @keyframes subtlePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .fab-pulse {
+      animation: subtlePulse 3.5s ease-in-out infinite;
+    }
+</style>
+</head>
+<body class="bg-[#FAF8F5] text-brand-charcoal font-sans antialiased selection:bg-brand-olive selection:text-white">
+<!-- BEGIN: Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-200/60 transition-all duration-300" id="main-header">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex flex-col group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-olive rounded" href="#home">
+<span class="font-serif-title text-2xl lg:text-3xl tracking-tight text-brand-charcoal font-medium">Kraft Collective</span>
+<span class="text-[9px] uppercase tracking-widest-plus text-stone-500 font-semibold -mt-1 group-hover:text-brand-olive transition-colors">The Brunch Theory • KNK</span>
+</a>
+<!-- Desktop Nav Links -->
+<nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-8 text-[13px] font-medium tracking-wide text-stone-700"><a class="nav-link hover:text-brand-olive transition-colors py-1 relative" href="#home" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">HOME</a>
+<a class="nav-link hover:text-brand-olive transition-colors py-1 relative" href="#about" onclick="event.preventDefault(); document.getElementById('about')?.scrollIntoView({behavior: 'smooth', block: 'start'});">ABOUT</a>
+<a class="nav-link hover:text-brand-olive transition-colors py-1 relative" href="#menu" onclick="event.preventDefault(); document.getElementById('menu')?.scrollIntoView({behavior: 'smooth', block: 'start'});">MENUS</a>
+<a class="nav-link hover:text-brand-olive transition-colors py-1 relative" href="#gallery" onclick="event.preventDefault(); document.getElementById('gallery')?.scrollIntoView({behavior: 'smooth', block: 'start'});">GALLERY</a>
+<a class="nav-link hover:text-brand-olive transition-colors py-1 relative" href="#events" onclick="event.preventDefault(); document.getElementById('events')?.scrollIntoView({behavior: 'smooth', block: 'start'});">EVENTS</a></nav>
+<!-- Reservation Header CTA & Mobile Hamburger -->
+<div class="flex items-center space-x-3 lg:space-x-4">
+<a aria-label="Reserve a Table via WhatsApp" class="hidden sm:inline-flex bg-brand-olive hover:bg-brand-oliveDark active:scale-95 text-white text-[12px] uppercase font-semibold tracking-wider px-6 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow" href="https://wa.me/918754476660?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20The%20Brunch%20Theory%20KNK" rel="noopener noreferrer" target="_blank">
+      Reserve a Table
+    </a>
+<!-- Hamburger Button for Mobile -->
+<button aria-controls="mobile-nav-menu" aria-expanded="false" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-lg text-stone-700 hover:text-brand-olive hover:bg-stone-200/50 focus:outline-none focus:ring-2 focus:ring-brand-olive transition-colors" id="mobile-menu-btn" type="button">
+<svg class="w-6 h-6 block" fill="none" id="hamburger-icon" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<svg class="w-6 h-6 hidden" fill="none" id="close-icon" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Mobile Navigation Drawer -->
+<div class="hidden md:hidden bg-[#FAF8F5] border-b border-stone-200 px-6 py-6 transition-all duration-300 shadow-xl" id="mobile-nav-menu">
+<div class="flex flex-col space-y-4 text-sm font-medium tracking-wider text-stone-800"><a class="mobile-nav-link hover:text-brand-olive transition-colors py-2 border-b border-stone-100" href="#home" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">HOME</a>
+<a class="mobile-nav-link hover:text-brand-olive transition-colors py-2 border-b border-stone-100" href="#about" onclick="event.preventDefault(); document.getElementById('about')?.scrollIntoView({behavior: 'smooth', block: 'start'});">ABOUT</a>
+<a class="mobile-nav-link hover:text-brand-olive transition-colors py-2 border-b border-stone-100" href="#menu" onclick="event.preventDefault(); document.getElementById('menu')?.scrollIntoView({behavior: 'smooth', block: 'start'});">MENUS</a>
+<a class="mobile-nav-link hover:text-brand-olive transition-colors py-2 border-b border-stone-100" href="#gallery" onclick="event.preventDefault(); document.getElementById('gallery')?.scrollIntoView({behavior: 'smooth', block: 'start'});">GALLERY</a>
+<a class="mobile-nav-link hover:text-brand-olive transition-colors py-2 border-b border-stone-100" href="#events" onclick="event.preventDefault(); document.getElementById('events')?.scrollIntoView({behavior: 'smooth', block: 'start'});">EVENTS</a>
+<div class="pt-2">
+<a class="block w-full text-center bg-brand-olive text-white text-xs uppercase font-semibold tracking-wider px-6 py-3 rounded-full hover:bg-brand-oliveDark transition-colors" href="https://wa.me/918754476660?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20The%20Brunch%20Theory%20KNK" rel="noopener noreferrer" target="_blank">
+        Reserve a Table
+      </a>
+</div></div>
+</div>
+</header>
+<!-- END: Navigation -->
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="relative pt-24 min-h-[92vh] flex flex-col justify-between overflow-hidden" id="home">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="The Brunch Theory Dining Atmosphere" class="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Y7y17oRNsGzCmB-WHcVa-6DpzJK_L1LRLmByvQjeyjBRkoTjBwxb_Z8s_X6rMmOTLirGdAdY5Mg8Phc9DVF-gG21yVuC4NeCEQFDYa2GQp-38ibVwodOrUQ5T0Tw4wgj-tJliHePRFmFUG1zntr6Se8sbCXs9qfbqR0euVjktLPOAajmwNwdf9Cq30_epxyIe_q0Cgk89u04BsXT9QO7IAFHSeZpiAPuLNAwHt0LO9UBeUWxB45z0Ox4Td3vy2FSzf1lu3SuaGiy9Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/65 to-stone-950/60"></div>
+</div>
+<!-- Main Hero Content -->
+<div class="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-24 text-center my-auto transition-all duration-700">
+<!-- Eyebrow text -->
+<p class="text-white/80 uppercase text-[11px] lg:text-[13px] tracking-widest-plus font-medium mb-6">
+  The Brunch Theory • Khader Nawaz Khan Road, Chennai
+</p>
+<!-- Big Serif Display Heading -->
+<h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl text-white font-normal leading-tight lg:leading-[1.1] mb-8">
+  Brunch, Reinvented.
+</h1>
+<!-- Subtitle -->
+<p class="text-stone-300 text-base sm:text-lg lg:text-xl font-light max-w-2xl mx-auto leading-relaxed mb-10">
+  Discover The Brunch Theory at KNK — an elegant dining destination where chef-crafted cuisine, contemporary ambience, and memorable gatherings come together.
+</p>
+<!-- CTA Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto bg-brand-olive hover:bg-brand-oliveLight active:scale-95 text-white font-medium text-xs uppercase tracking-widest-plus px-8 py-4 rounded-full transition-all duration-300 shadow-lg cursor-pointer" href="https://wa.me/918754476660?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20The%20Brunch%20Theory%20KNK" rel="noopener noreferrer" target="_blank">
+  Reserve a Table
+</a>
+<a class="w-full sm:w-auto bg-transparent hover:bg-white/10 active:scale-95 text-white border border-white/40 hover:border-white font-medium text-xs uppercase tracking-widest-plus px-8 py-4 rounded-full transition-all duration-300 cursor-pointer" href="#menu" id="hero-view-menu-btn" onclick="event.preventDefault(); document.getElementById('menu')?.scrollIntoView({behavior: 'smooth', block: 'start'});">
+  View Menu
+</a>
+</div>
+</div>
+<!-- Continuous Seamless Ticker Strip -->
+<div class="relative z-10 bg-brand-oliveDark border-t border-brand-olive/30 py-3.5 px-4 overflow-hidden ticker-container">
+<div class="ticker-track">
+<div class="flex items-center space-x-6 text-[11px] md:text-xs text-white/90 uppercase tracking-widest-plus font-medium pr-6">
+<span class="">Specialty Coffee</span>
+<span class="text-brand-gold">•</span>
+<span class="">Artisanal Brunch</span>
+<span class="text-brand-gold">•</span>
+<span class="">Khader Nawaz Khan Road</span>
+<span class="text-brand-gold">•</span>
+<span class="">Fine Evening Dining</span>
+<span class="text-brand-gold">•</span>
+<span class="">Curated Mocktails</span>
+<span class="text-brand-gold">•</span>
+<span class="">Intimate Gatherings</span>
+</div>
+<!-- Duplicated Track for Continuous Loop -->
+<div aria-hidden="true" class="flex items-center space-x-6 text-[11px] md:text-xs text-white/90 uppercase tracking-widest-plus font-medium pr-6">
+<span class="text-brand-gold">•</span>
+<span class="">Specialty Coffee</span>
+<span class="text-brand-gold">•</span>
+<span class="">Artisanal Brunch</span>
+<span class="text-brand-gold">•</span>
+<span class="">Khader Nawaz Khan Road</span>
+<span class="text-brand-gold">•</span>
+<span class="">Fine Evening Dining</span>
+<span class="text-brand-gold">•</span>
+<span class="">Curated Mocktails</span>
+<span class="text-brand-gold">•</span>
+<span class="">Intimate Gatherings</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: AboutSection -->
+<section class="py-24 lg:py-32 bg-[#FAF8F5] reveal-on-scroll revealed" id="about" style="scroll-margin-top: 100px;">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Narrative Left Column -->
+<div class="lg:col-span-6 space-y-6">
+<span class="text-brand-olive text-xs font-bold uppercase tracking-widest block">
+  — About The Brunch Theory
+</span>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-brand-charcoal font-normal leading-tight">
+  More Than A Brunch.
+</h2>
+<div class="space-y-4 text-stone-600 font-light text-base lg:text-lg leading-relaxed pt-2">
+<p class="">
+  Nestled on Chennai's most iconic boulevard, Khader Nawaz Khan Road, <strong class="font-medium text-brand-charcoal">The Brunch Theory</strong> is an intentional retreat from the hurried pace outside. Designed with earthy terracotta tones, hand-finished lime-wash walls, and plush banquettes, our sanctuary celebrates the unhurried joy of sharing elevated food.
+</p>
+<p class="">
+  From sunrise flat whites made with micro-lot beans to golden brioche towers and intimate multi-course evening dinners, every plate honours culinary precision, vibrant seasonal produce, and soulful hospitality.
+</p>
+</div>
+<!-- Stats Metrics -->
+<div class="grid grid-cols-3 gap-6 pt-8 border-t border-stone-200">
+<div>
+<p class="font-serif text-3xl lg:text-4xl text-brand-charcoal">100%</p>
+<p class="text-[11px] uppercase tracking-wider text-stone-500 font-medium mt-1">Artisanal Sourdough</p>
+</div>
+<div>
+<p class="font-serif text-3xl lg:text-4xl text-brand-charcoal">Single</p>
+<p class="text-[11px] uppercase tracking-wider text-stone-500 font-medium mt-1">Origin Coffees</p>
+</div>
+<div>
+<p class="font-serif text-3xl lg:text-4xl text-brand-charcoal">KNK</p>
+<p class="text-[11px] uppercase tracking-wider text-stone-500 font-medium mt-1">Nungambakkam</p>
+</div>
+</div>
+</div>
+<!-- Imagery Right Column -->
+<div class="lg:col-span-6">
+<div class="relative group">
+<div class="overflow-hidden rounded-2xl shadow-2xl aspect-[4/3] bg-stone-200 cursor-pointer">
+<img alt="Artisanal Farm Eggs Benedict with micro-greens" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9nyeyvH_3WaTD94unxwFT34aHa29AX_JJ5F8FK88ml8LXMPgMU6uyRdOUqLu4wu6Ex9GdRQ1b6vp7j2ECt7gkZ_oTHTJAa8Kj-Hcu5FZ9eZiZwmD0JlNAN-p8fNRuqLlb7XbYxrfZK5OL3TSd9K-ndl3hSjJNhN_PKSE2aA6aTknm3xo0lCLa9LsLuSzwOpen4xGpxQTHpukoSeWFieoT6ZASgECu688Sw5cXS6UVFrC8nOKRsRbozGsOsak0MP0pEhCfX0rBIIuuSA"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutSection -->
+<!-- BEGIN: CuratedOfferings -->
+<section class="py-24 bg-[#F5F2ED] border-y border-stone-200/60 reveal-on-scroll revealed" id="menu" style="scroll-margin-top: 100px;">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Header -->
+<div class="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
+<span class="text-brand-olive text-xs uppercase tracking-widest-plus font-semibold block mb-3">
+  Crafted Flavours
+</span>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-brand-charcoal font-normal mb-4">
+  Curated Offerings
+</h2>
+<p class="text-stone-600 font-light text-base lg:text-lg">
+  Locally inspired techniques meeting global culinary craft — made fresh-to-order every day.
+</p>
+</div>
+<!-- 2 Column Menu Grid with Clean Price Leaders -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16"><!-- Column 1 -->
+<div class="space-y-12">
+<!-- Eggs & Early Plates -->
+<div>
+<div class="border-b border-stone-300/80 pb-2 mb-6">
+<h3 class="font-serif text-2xl text-brand-charcoal">Eggs &amp; Early Plates</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Morning Staples &amp; Skillets</span>
+</div>
+<div class="space-y-6">
+<div>
+<h4 class="font-medium text-stone-900 text-base">Shawarma Benedict</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Chilli Oil Benedict</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Menemen Bowl</h4>
+</div>
+</div>
+</div>
+<!-- Pancakes, Waffles & Toasts -->
+<div>
+<div class="border-b border-stone-300/80 pb-2 mb-6">
+<h3 class="font-serif text-2xl text-brand-charcoal">Pancakes, Waffles &amp; Toasts</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Sweet &amp; Savoury Griddle</span>
+</div>
+<div class="space-y-6">
+<div>
+<h4 class="font-medium text-stone-900 text-base">Banoffee French Toast</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Tiramisu Hotcakes</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Mango Tres Leches Toast</h4>
+</div>
+</div>
+</div>
+<!-- Small Plates & Shareables - Non-Vegetarian -->
+<div>
+<div class="border-b border-stone-300/80 pb-2 mb-6">
+<h3 class="font-serif text-2xl text-brand-charcoal">Small Plates – Non-Vegetarian</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Tacos, Skewers &amp; Bites</span>
+</div>
+<div class="space-y-6">
+<div>
+<h4 class="font-medium text-stone-900 text-base">Sichuan Popcorn Chicken</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Tandoori Fish / Chicken Tacos</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Harissa Prawns</h4>
+</div>
+</div>
+</div>
+<!-- Desserts -->
+<div>
+<div class="border-b border-stone-300/80 pb-2 mb-6">
+<h3 class="font-serif text-2xl text-brand-charcoal">Desserts</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Patisserie &amp; Sweet Treats</span>
+</div>
+<div class="space-y-6">
+<div>
+<h4 class="font-medium text-stone-900 text-base">Dark Chocolate Curry Leaf Mousse</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Coconut Panna Cotta</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Tahini Caramel Cheesecake</h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2 -->
+<div class="space-y-12">
+<!-- Grains, Bowls & Greens -->
+<div>
+<div class="border-b border-stone-300/80 pb-2 mb-6">
+<h3 class="font-serif text-2xl text-brand-charcoal">Grains, Bowls &amp; Greens</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Wholesome &amp; Nourishing</span>
+</div>
+<div class="space-y-6">
+<div>
+<h4 class="font-medium text-stone-900 text-base">Dimsum Bowl</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Burrata &amp; Watermelon Salad</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Thai Peanut Noodle Bowl</h4>
+</div>
+</div>
+</div>
+<!-- Small Plates & Shareables - Vegetarian -->
+<div>
+<div class="border-b border-stone-300/80 pb-2 mb-6">
+<h3 class="font-serif text-2xl text-brand-charcoal">Small Plates – Vegetarian</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Crispy, Dips &amp; Warm Starters</span>
+</div>
+<div class="space-y-6">
+<div>
+<h4 class="font-medium text-stone-900 text-base">Hashbrown Bruschetta</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Spinach &amp; Artichoke Cigars</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Crispy Pod Oyster Mushrooms with Curry Leaf Aioli</h4>
+</div>
+</div>
+</div>
+<!-- All Day Plates / Mains -->
+<div>
+<div class="border-b border-stone-300/80 pb-2 mb-6">
+<h3 class="font-serif text-2xl text-brand-charcoal">All Day Plates / Mains</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Hearty Plates &amp; Specialties</span>
+</div>
+<div class="space-y-6">
+<div>
+<h4 class="font-medium text-stone-900 text-base">Mushroom Ragu Pasta</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Harissa Roast Chicken</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">Sri Lankan Fish &amp; Chips</h4>
+</div>
+</div>
+</div>
+<!-- Coffee Classics & Krafted Specials -->
+<div>
+<div class="border-b border-stone-300/80 pb-2 mb-6">
+<h3 class="font-serif text-2xl text-brand-charcoal">Coffee Classics &amp; Specials</h3>
+<span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Ethically Sourced Arabica &amp; Coolers</span>
+</div>
+<div class="space-y-6">
+<div>
+<h4 class="font-medium text-stone-900 text-base">FLAT WHITE</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">CORTADO</h4>
+</div>
+<div>
+<h4 class="font-medium text-stone-900 text-base">COCONUT ESPRESSO COOLER</h4>
+</div>
+</div>
+</div>
+</div></div>
+<!-- Menu Action - Interactive Modal Trigger -->
+<div class="text-center mt-16">
+<button class="inline-flex items-center space-x-2 bg-brand-charcoal hover:bg-stone-800 active:scale-95 text-white text-xs font-semibold uppercase tracking-widest-plus px-8 py-3.5 rounded-full transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-olive" id="open-menu-modal" type="button">
+<span class="">View Full Menu</span>
+<span class="">→</span>
+</button>
+</div>
+</div>
+</section>
+<!-- END: CuratedOfferings -->
+<!-- BEGIN: TheAtmosphere -->
+<section class="py-24 bg-[#FAF8F5] reveal-on-scroll revealed" id="atmosphere" style="scroll-margin-top: 5rem;">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-3xl mx-auto mb-14">
+<span class="text-brand-olive text-xs uppercase tracking-widest-plus font-semibold block mb-3">
+  The Atmosphere
+</span>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-brand-charcoal font-normal mb-6">
+  Where Every Table Has A Story
+</h2>
+<p class="text-stone-600 font-light text-base lg:text-lg leading-relaxed">
+  From luminous sun-drenched afternoons filled with laughter to soft-lit evening conversations accompanied by jazz notes and comforting flavours, The Brunch Theory transforms with every hour of the day.
+</p>
+</div>
+<!-- Hero Sized Interior Photograph -->
+<div class="overflow-hidden rounded-3xl shadow-xl aspect-[16/9] lg:aspect-[21/9] bg-stone-300 group cursor-pointer">
+<img alt="Warm architectural restaurant interior at KNK Road" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZLCPy__-PkSyphtIy9MfuVtNvttpxw78YJjwY2ZPz7i-ai4ya8rKtP4VtNimbYUlrggVs6UKBtlCNBnG6T3Vw90Zeecdw0WyIYSrsCJb2fBlfxCHwZ701RYnplm0R91iibBofAIn278mnBwZurm46NkzlmGsVQzdkPM_cQ3bpkXb5SnGblsghcwML2cwMc2EeLVM52zsWxmwvo8q3B8mKrNobIbqGhHcqeFC0pqGB9svRxmL2zzV20Rr22paQAWHqzuJxq3Ley3ypgg"/>
+</div>
+</div>
+</section>
+<!-- END: TheAtmosphere -->
+<!-- BEGIN: VisualChronicle -->
+<section class="py-16 bg-[#FAF8F5] reveal-on-scroll revealed" id="gallery" style="scroll-margin-top: 100px;">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<span class="text-brand-olive text-xs uppercase tracking-widest-plus font-semibold block mb-2">
+  Visual Chronicle
+</span>
+<h2 class="font-serif text-3xl sm:text-4xl text-brand-charcoal font-normal">
+  A Look Inside The Craft
+</h2>
+</div>
+<span class="text-xs uppercase tracking-widest text-stone-500 font-medium mt-2 md:mt-0">
+  Khader Nawaz Khan Road • Nungambakkam
+</span>
+</div>
+<!-- 3-Image Showcase Grid with Lightbox Triggers -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"><div class="overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 shadow-md cursor-default"><img alt="Plated honey honeycomb dessert patisserie" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmF3myhmHei73WkxSg-OIUpp7gpjOG06cmN55oYxdb7wto2bsJkPh4dRf68h6bDEgK0PrB-ccdtOBck6ejpr9U_bJjNeN7TYVXZzdTI0WVvSmgR2NaStRfAdUnkXnHnyI3qycRvW4osqUxSX7KpaI788C3r4NlOGku3Vl_SIc56dmxIIypCSLIkOL-P6gagQX8Kka8Gr2hihLgE4SCLfSDh6kdGMzoZoQI9CTyGX3zLTusepaaakyQQHcrxhwb76jKFqhgdoG1SPl53g"/></div><div class="overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 shadow-md cursor-default"><img alt="Backlit shelves and warm restaurant design details" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhDG5_6A62oIQup5cTg7CPhojRBCT3VyQgCpz7rIR67gzZaaBKElPRTCmsbcaJNHzSJxkUkKNVcA9ZLSJpKB1D5n3Xs1Jty5cR-ePfMahBsRALQ44kNiloOmF6IwCWHn54YaOwNqynOuY7BH3wz4SBnkdb1crFOg2EsQJVmAPnZZU-0apFPDJ8qj0v4UB-gVXMDIS09SQeiFQRUExfaCZXrN6_7Fg5ZC11xKb4lyx5qNBLEYE2rEWMpVb4ynEHjROUfIFWOhuRDsDIag"/></div><div class="overflow-hidden rounded-2xl aspect-[4/5] bg-stone-200 shadow-md cursor-default"><img alt="Refreshing layered craft mocktail drink" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGoUyfC9P82lewPh_9mwgE_CAFMxhoKW7YauAjqi7_gLc6z_-ERhAFkWLztRel7FhL7ETma2SxL5rjHuih-8Y4xsysGv-qKMJu_8kgXy6P0DbDYALzvNheuaZZBQAH6TpRFtAIWT7WuXlPPkeC3KOcnLMYYm8WB2H-SWGYY8z0l_1dpzb2KNKiFyLTHcZ0mkhC6NGZuW8aEwwjTyFv0qQaWHAz9Dx1PKRoa7DrkD4Pfhagsx1eina3VobnsKJw9WEGCfItycEtZBOMDA"/></div></div>
+</div>
+</section>
+<!-- END: VisualChronicle -->
+<!-- BEGIN: BespokeGatherings -->
+<section class="py-24 bg-brand-oliveDark text-white reveal-on-scroll revealed" id="events" style="scroll-margin-top: 100px;">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<span class="text-brand-gold text-xs uppercase tracking-widest-plus font-semibold block mb-4">
+  Bespoke Gatherings
+</span>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight mb-6">
+  Got The Occasion?<br/>We’ve Got The Space.
+</h2>
+<p class="text-stone-300 font-light text-base lg:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+  Whether you are planning an intimate birthday dinner, an anniversary celebration, corporate luncheons, or a private culinary workshop, our dedicated hospitality team curates unforgettable tailored moments on KNK.
+</p>
+<a class="inline-block bg-white hover:bg-stone-100 active:scale-95 text-brand-oliveDark text-xs uppercase tracking-widest-plus font-bold px-9 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer" href="https://wa.me/918754476660?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20private%20event%20at%20The%20Brunch%20Theory%20KNK" rel="noopener noreferrer" target="_blank">
+  Explore Events &amp; Bookings
+</a>
+</div>
+</section>
+<!-- END: BespokeGatherings -->
+<!-- BEGIN: Testimonials -->
+<section class="py-24 bg-[#FAF8F5] reveal-on-scroll revealed">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-brand-olive text-xs uppercase tracking-widest-plus font-semibold block mb-2">
+  Kind Words
+</span>
+<h2 class="font-serif text-4xl sm:text-5xl text-brand-charcoal font-normal">
+  Loved by Chennai
+</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-white p-8 rounded-2xl border border-stone-200/70 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="text-amber-500 text-sm tracking-widest mb-4">★★★★★</div>
+<p class="font-serif italic text-stone-700 text-base leading-relaxed mb-6">
+  “Easily the best café experience on KNK Road. The specialty coffee is phenomenal and the interiors feel like a luxury boutique hotel in Milan. My go-to spot for long conversations.”
+</p>
+</div>
+<div>
+<h4 class="font-semibold text-xs tracking-wider uppercase text-brand-charcoal">Ananya Rajan</h4>
+<p class="text-[11px] text-stone-500 font-medium">Regular • Nungambakkam</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-8 rounded-2xl border border-stone-200/70 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="text-amber-500 text-sm tracking-widest mb-4">★★★★★</div>
+<p class="font-serif italic text-stone-700 text-base leading-relaxed mb-6">
+  “We celebrated our anniversary at KNK and the fine dining dinner service was flawless — chef-crafted, elegant and unforgettable. Warm hospitality at its very finest.”
+</p>
+</div>
+<div>
+<h4 class="font-semibold text-xs tracking-wider uppercase text-brand-charcoal">Vikram Menon</h4>
+<p class="text-[11px] text-stone-500 font-medium">Dinner Guest</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-8 rounded-2xl border border-stone-200/70 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="text-amber-500 text-sm tracking-widest mb-4">★★★★★</div>
+<p class="font-serif italic text-stone-700 text-base leading-relaxed mb-6">
+  “The Brioche French Toast and Truffle Risotto are utterly divine. Outstanding aesthetic, gorgeous seating, and genuine service every single time.”
+</p>
+</div>
+<div>
+<h4 class="font-semibold text-xs tracking-wider uppercase text-brand-charcoal">Priya Sundaram</h4>
+<p class="text-[11px] text-stone-500 font-medium">Weekend Brunch Enthusiast</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Testimonials -->
+<!-- BEGIN: VisitUs -->
+<section class="py-20 bg-[#F5F2ED] border-t border-stone-200 reveal-on-scroll revealed" id="visit" style="scroll-margin-top: 5rem;">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="bg-white rounded-3xl border border-stone-200/80 p-8 sm:p-12 lg:p-16 shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Info Details -->
+<div class="lg:col-span-6 space-y-6">
+<span class="text-brand-olive text-xs uppercase tracking-widest-plus font-semibold block">
+  Visit Us
+</span>
+<h2 class="font-serif text-3xl sm:text-4xl text-brand-charcoal font-normal">
+  Find Your Table in Chennai
+</h2>
+<div class="space-y-5 text-sm text-stone-600 font-normal">
+<div class="flex items-start space-x-3">
+<svg class="w-5 h-5 text-brand-olive shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+<div>
+<strong class="font-medium text-brand-charcoal block">The Brunch Theory - KNK</strong>
+<a class="hover:text-brand-olive transition-colors underline decoration-stone-300" href="https://www.google.com/maps/search/?api=1&amp;query=The+Brunch+Theory+2F+11+Khader+Nawaz+Khan+Road+Chennai+Tamil+Nadu+600006" rel="noopener noreferrer" target="_blank">
+  2F, 11 Khader Nawaz Khan Road, Nungambakkam, Chennai, Tamil Nadu 600006
+</a>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<svg class="w-5 h-5 text-brand-olive shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+<div class="">
+<strong class="font-medium text-brand-charcoal block">Operating Hours</strong>
+  Monday – Sunday: 11:00 AM – 11:00 PM<br/>
+<span class="text-stone-500 text-xs">Complimentary valet parking available</span>
+</div>
+</div>
+<div class="flex items-start space-x-3">
+<svg class="w-5 h-5 text-brand-olive shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+<div>
+<strong class="font-medium text-brand-charcoal block">Concierge &amp; Reservations</strong>
+<a class="hover:underline font-medium text-brand-olive" href="tel:+918754476660">+91 87544 76660</a>
+</div>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="pt-4 flex flex-wrap gap-4">
+<a class="bg-brand-olive hover:bg-brand-oliveDark active:scale-95 text-white text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-200" href="https://www.google.com/maps/search/?api=1&amp;query=The+Brunch+Theory+2F+11+Khader+Nawaz+Khan+Road+Chennai+Tamil+Nadu+600006" rel="noopener noreferrer" target="_blank">
+  Get Directions
+</a>
+<a class="border border-stone-300 hover:border-brand-charcoal active:scale-95 text-brand-charcoal text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-200" href="tel:+918754476660">
+  Call Us
+</a>
+</div>
+</div>
+<!-- Right Visual Map Card - Interactive Click to Open Maps -->
+<div class="lg:col-span-6">
+<a class="group block w-full h-80 rounded-2xl bg-stone-200 border border-stone-300 relative overflow-hidden flex items-center justify-center p-6 text-center transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-olive" href="https://www.google.com/maps/search/?api=1&amp;query=The+Brunch+Theory+2F+11+Khader+Nawaz+Khan+Road+Chennai+Tamil+Nadu+600006" rel="noopener noreferrer" target="_blank" title="Open The Brunch Theory on Google Maps">
+<!-- Subtle pattern backdrop -->
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(#3e5338_1px,transparent_1px)] [background-size:16px_16px] group-hover:scale-105 transition-transform duration-500"></div>
+<div class="relative bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl max-w-sm w-full border border-stone-100 group-hover:scale-102 transition-transform duration-300">
+<div class="w-12 h-12 bg-brand-olive/10 text-brand-olive rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-brand-olive group-hover:text-white transition-colors duration-300">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path></svg>
+</div>
+<h4 class="font-serif text-lg font-semibold text-brand-charcoal">The Brunch Theory</h4>
+<p class="text-xs text-stone-500 mt-1 mb-4">11, Khader Nawaz Khan Rd, Nungambakkam</p>
+<span class="text-[11px] font-bold uppercase tracking-widest text-brand-olive group-hover:underline block">
+  Open in Google Maps →
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: VisitUs -->
+<!-- BEGIN: FinalCTA -->
+<section class="relative py-28 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Warm evening restaurant table" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy3-btYFYLl3fYgnZ0fL3shWaDjxM6efLL1qoRX_zOXyM7smus2gG3eOmwDbvSxdm3Yrq5OeFcSn1HwKiM0iyQAlyTe1DWWrU7gJMjSuLShS86PMn0DWqQjcQ0TSa2jzTjgW1nja5o8W2GBV4HKavFv0NcwYrgxA0fKTVOoXdhICf4aUNu3nt_n8m5yDBivq3lRksichckiqzX_O6_9Di7C_yRLPTFaCtH8jkE1TlnTe-GIyFdrf5Xe4ZQY5OStjviQav9Fdhv6wvVNQ"/>
+<div class="absolute inset-0 bg-stone-950/80"></div>
+</div>
+<div class="relative z-10 max-w-3xl mx-auto px-6 text-center text-white">
+<span class="text-brand-gold text-xs uppercase tracking-widest-plus font-semibold block mb-4">
+  Reserve In Advance
+</span>
+<h2 class="font-serif text-4xl sm:text-6xl font-normal leading-tight mb-6">
+  Come For The Brunch.<br/>Stay For The Experience.
+</h2>
+<p class="text-stone-300 font-light text-base sm:text-lg mb-8 max-w-xl mx-auto">
+  Join us for your next breakfast gathering, golden-hour date, or festive group dinner on KNK Road.
+</p>
+<a class="inline-block bg-brand-olive hover:bg-brand-oliveLight active:scale-95 text-white text-xs uppercase font-bold tracking-widest-plus px-9 py-4 rounded-full transition-all duration-300 shadow-xl cursor-pointer" href="https://wa.me/918754476660?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20The%20Brunch%20Theory%20KNK" rel="noopener noreferrer" target="_blank">
+  Reserve a Table
+</a>
+</div>
+</section>
+<!-- END: FinalCTA -->
+</main>
+<!-- BEGIN: Footer -->
+<footer class="bg-white border-t border-stone-200 text-stone-600 text-xs">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+<!-- Brand Info -->
+<div class="lg:col-span-2 space-y-4">
+<span class="font-serif-title text-2xl text-brand-charcoal block">Kraft Collective</span>
+<p class="text-stone-500 font-light text-xs leading-relaxed max-w-sm">
+  Chennai's premium hospitality and lifestyle collective. Thoughtfully curated cafés, dining destinations, and creative spaces where unforgettable moments take shape.
+</p>
+<div class="pt-2 text-stone-400 text-[11px]">
+  © 2025 Kraft Collective. All rights reserved.
+</div>
+</div>
+<!-- Sister Outlets -->
+<div>
+<h5 class="text-brand-charcoal font-semibold uppercase text-[11px] tracking-wider mb-4">Sister Outlets</h5>
+<ul class="space-y-2 text-stone-500">
+<li class=""><a class="hover:text-brand-olive transition-colors" href="https://maps.google.com/?q=Kreate+by+Kraft+ECR+Chennai" rel="noopener noreferrer" target="_blank">Kreate by Kraft – ECR</a></li>
+<li class=""><a class="hover:text-brand-olive transition-colors" href="https://maps.google.com/?q=Kraft+Nandanam+Chennai" rel="noopener noreferrer" target="_blank">Kraft – Nandanam</a></li>
+<li class=""><a class="font-medium text-brand-charcoal hover:text-brand-olive transition-colors" href="#home">The Brunch Theory – KNK</a></li>
+</ul>
+</div>
+<!-- Explore -->
+<div>
+<h5 class="text-brand-charcoal font-semibold uppercase text-[11px] tracking-wider mb-4">Explore</h5>
+<ul class="space-y-2 text-stone-500">
+<li class=""><a class="hover:text-brand-olive transition-colors" href="#about">About KNK</a></li>
+<li class=""><a class="hover:text-brand-olive transition-colors" href="#menu">Seasonal Menus</a></li>
+<li class=""><a class="hover:text-brand-olive transition-colors" href="#gallery">Interior Gallery</a></li>
+<li class=""><a class="hover:text-brand-olive transition-colors" href="#events">Private Events</a></li>
+</ul>
+</div>
+<!-- Concierge -->
+<div>
+<h5 class="text-brand-charcoal font-semibold uppercase text-[11px] tracking-wider mb-4">Concierge</h5>
+<ul class="space-y-2 text-stone-500">
+<li class=""><a class="hover:text-brand-olive transition-colors" href="https://maps.google.com/?q=The+Brunch+Theory+Khader+Nawaz+Khan+Road+Chennai" rel="noopener noreferrer" target="_blank">11 Khader Nawaz Khan Road,<br/>Nungambakkam, Chennai</a></li>
+<li class="pt-2">
+<a class="font-semibold text-brand-olive hover:underline block" href="tel:+918754476660">+91 87544 76660</a>
+</li>
+<li class="">
+<a class="hover:underline" href="mailto:hello@kraftcollective.in">hello@kraftcollective.in</a>
+</li>
+<li class="pt-1">
+<a class="hover:text-brand-olive transition-colors inline-flex items-center space-x-1" href="https://www.instagram.com/kraftcollective.in/" rel="noopener noreferrer" target="_blank">
+<span class="">Instagram</span>
+<span class="text-[10px]">↗</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- Legal bottom strip -->
+<div class="mt-12 pt-8 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-400">
+<p class="">Best Café &amp; Restaurant in Nungambakkam, Chennai.</p>
+<div class="flex space-x-6 mt-4 sm:mt-0">
+<a class="hover:text-stone-600 transition-colors" href="#about">Privacy Policy</a>
+<a class="hover:text-stone-600 transition-colors" href="#about">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+<!-- Floating Quick Actions (WhatsApp & Call) -->
+<aside aria-label="Social Links" class="fixed bottom-8 right-8 z-[100]"><a aria-label="Follow The Brunch Theory on Instagram" class="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform group backdrop-blur-sm" href="https://www.instagram.com/thebrunchtheory/" id="floating-instagram-btn" rel="noopener noreferrer" style="background: linear-gradient(45deg, rgba(240, 148, 51, 0.8) 0%, rgba(230, 104, 60, 0.8) 25%, rgba(220, 39, 67, 0.8) 50%, rgba(204, 35, 102, 0.8) 75%, rgba(188, 24, 136, 0.8) 100%); border: 1px solid rgba(255, 255, 255, 0.3);" target="_blank" title="Follow on Instagram"><svg class="group-hover:rotate-12 transition-transform" fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a></aside>
+<!-- ======================================================== -->
+<!-- INTERACTIVE MODAL: Full Seasonal Menu                    -->
+<!-- ======================================================== -->
+<div aria-labelledby="menu-modal-title" aria-modal="true" class="fixed inset-0 z-50 overflow-y-auto bg-stone-950/70 backdrop-blur-sm p-4 sm:p-6 flex items-center justify-center transition-all duration-300 hidden" id="menu-modal" role="dialog">
+<div class="relative bg-[#FAF8F5] w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden border border-stone-300 my-8 max-h-[90vh] flex flex-col">
+<!-- Header -->
+<div class="px-6 sm:px-10 py-6 border-b border-stone-200 flex items-center justify-between bg-[#F5F2ED]">
+<div>
+<span class="text-brand-olive text-[11px] font-bold uppercase tracking-widest block">Crafted Flavours</span>
+<h3 class="font-serif text-2xl sm:text-3xl text-brand-charcoal" id="menu-modal-title">Complete Seasonal Menu</h3>
+</div>
+<button aria-label="Close Menu Modal" class="text-stone-500 hover:text-stone-900 p-2 rounded-full hover:bg-stone-200 transition-colors" id="close-menu-modal" type="button">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<!-- Category Filter Tabs -->
+<div class="px-6 sm:px-10 pt-4 pb-2 border-b border-stone-200 overflow-x-auto no-scrollbar flex space-x-4 text-xs font-semibold uppercase tracking-wider">
+<button class="menu-tab text-brand-olive border-b-2 border-brand-olive pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-all" type="button">All Items</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-eggs" type="button">Eggs &amp; Early Plates</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-grains" type="button">Grains &amp; Greens</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-pancakes" type="button">Pancakes, Waffles &amp; Toasts</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-veg-small" type="button">Small Plates &amp; Shareables – Vegetarian</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-nonveg-small" type="button">Small Plates &amp; Shareables – Non-Vegetarian</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-boards" type="button">Shareable Boards</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-mains" type="button">All Day Plates / Mains</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-comfort" type="button">Comfort Corner</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-desserts" type="button">Desserts</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-coffee-classics" type="button">Coffee Classics</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-coffee-specials" type="button">Krafted Coffee Specials</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-iced-teas" type="button">Krafted Iced Teas</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-signatures" type="button">TBT Signatures</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-fresh-farm" type="button">Fresh From Farm</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-thickshakes" type="button">Thickshakes</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-matcha" type="button">Matcha Corner</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-smoothies" type="button">Classic Smoothie</button>
+<button class="menu-tab text-stone-500 hover:text-brand-charcoal pb-2 transition-colors cursor-pointer shrink-0" data-target-id="modal-cat-aerated" type="button">Aerated Drinks</button>
+</div>
+<!-- Modal Content Body -->
+<div class="p-6 sm:px-10 overflow-y-auto space-y-8 flex-1 scroll-smooth" id="modal-content-container">
+<!-- Anchor for top / All Items -->
+<div class="h-0 w-0 pointer-events-none -mt-4" id="modal-cat-all"></div>
+<!-- Eggs & Early Plates -->
+<div class="menu-section-group" data-group="breakfast" id="modal-cat-eggs">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Eggs &amp; Early Plates</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">Shawarma Benedict</div>
+<div class="font-medium text-stone-900">Chilli Oil Benedict</div>
+<div class="font-medium text-stone-900">Corn &amp; Jalapeno Frittata</div>
+<div class="font-medium text-stone-900">Eggs in Ghee &amp; Pepper</div>
+<div class="font-medium text-stone-900">Menemen Bowl</div>
+<div class="font-medium text-stone-900">Green Eggs &amp; Burrata</div>
+<div class="font-medium text-stone-900">Kheema Shakshouka</div>
+<div class="font-medium text-stone-900">Miso Baked Eggs</div>
+<div class="font-medium text-stone-900">Chilli Egg Bun</div>
+</div>
+</div>
+<!-- Grains, Bowls & Greens -->
+<div class="menu-section-group" data-group="bowls" id="modal-cat-grains">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Grains, Bowls &amp; Greens</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">Dimsum Bowl</div>
+<div class="font-medium text-stone-900">Brown Butter Barley Salad</div>
+<div class="font-medium text-stone-900">Burrata &amp; Watermelon Salad</div>
+<div class="font-medium text-stone-900">Mediterranean Power Bowl</div>
+<div class="font-medium text-stone-900">Tandoori Couscous Bowl</div>
+<div class="font-medium text-stone-900">Thai Peanut Noodle Bowl</div>
+</div>
+</div>
+<!-- Pancakes, Waffles & Toasts -->
+<div class="menu-section-group" data-group="toasts" id="modal-cat-pancakes">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Pancakes, Waffles &amp; Toasts</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">Banoffee French Toast</div>
+<div class="font-medium text-stone-900">Bakalava-fies</div>
+<div class="font-medium text-stone-900">Tiramisu Hotcakes</div>
+<div class="font-medium text-stone-900">Chilli Cheese French Toast</div>
+<div class="font-medium text-stone-900">Savoury Oat Pancakes (Eggless)</div>
+<div class="font-medium text-stone-900">Savoury Corn Waffle</div>
+<div class="font-medium text-stone-900">Singapore Chilli Crab Toast</div>
+<div class="font-medium text-stone-900">Kimchi Jeon</div>
+<div class="font-medium text-stone-900">Mango Tres Leches Toast</div>
+<div class="font-medium text-stone-900">Choco Lava Pancake Stack</div>
+</div>
+</div>
+<!-- Small Plates & Shareables - Vegetarian -->
+<div class="menu-section-group" data-group="plates" id="modal-cat-veg-small">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Small Plates &amp; Shareables – Vegetarian</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">Hashbrown Bruschetta</div>
+<div class="font-medium text-stone-900">Spinach &amp; Artichoke Cigars</div>
+<div class="font-medium text-stone-900">Crispy Pod Oyster Mushrooms with Curry Leaf Aioli</div>
+<div class="font-medium text-stone-900">Regular Fries</div>
+<div class="font-medium text-stone-900">Sweet Potato Chips</div>
+<div class="font-medium text-stone-900">Whipped Feta</div>
+<div class="font-medium text-stone-900">Mixed Mushroom Croquettes</div>
+<div class="font-medium text-stone-900">Paneer / Tofu Bahn Mi Tacos</div>
+<div class="font-medium text-stone-900">Mac &amp; Cheese Makhni Samosa</div>
+<div class="font-medium text-stone-900">Spiced Tapioca Potato Pops</div>
+<div class="font-medium text-stone-900">Steamed Sago Dimsum (5 Pieces)</div>
+<div class="font-medium text-stone-900">The Slider Plate</div>
+</div>
+</div>
+<!-- Small Plates & Shareables - Non-Vegetarian -->
+<div class="menu-section-group" data-group="plates" id="modal-cat-nonveg-small">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Small Plates &amp; Shareables – Non-Vegetarian</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">Sichuan Popcorn Chicken</div>
+<div class="font-medium text-stone-900">Tandoori Fish / Chicken Tacos</div>
+<div class="font-medium text-stone-900">Katsu Chicken Bites</div>
+<div class="font-medium text-stone-900">Harissa Prawns</div>
+<div class="font-medium text-stone-900">Greek Chicken Skewers</div>
+<div class="font-medium text-stone-900">Beef Birria Croquettes</div>
+<div class="font-medium text-stone-900">Crab Cakes</div>
+<div class="font-medium text-stone-900">Kerala Pepper Beef</div>
+<div class="font-medium text-stone-900">Shrimp Rangoon Nachos</div>
+<div class="font-medium text-stone-900">Chicken Pad Krapao Sago Dumplings</div>
+<div class="font-medium text-stone-900">Slider Board (2 Sliders)</div>
+</div>
+</div>
+<!-- Shareable Boards -->
+<div class="menu-section-group" data-group="plates" id="modal-cat-boards">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Shareable Boards (For Three or More)</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">Brunch Mezze Board</div>
+<div class="font-medium text-stone-900">The Wing Board</div>
+<div class="font-medium text-stone-900">Nacho Board</div>
+<div class="font-medium text-stone-900">Nacho Board - Topping Options</div>
+<div class="font-medium text-stone-900">Potato Plates</div>
+</div>
+</div>
+<!-- All Day Plates / Mains -->
+<div class="menu-section-group" data-group="mains" id="modal-cat-mains">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">All Day Plates / Mains</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">Mushroom Ragu Pasta</div>
+<div class="font-medium text-stone-900">Tandoori Paneer Steak</div>
+<div class="font-medium text-stone-900">Harissa Roast Chicken</div>
+<div class="font-medium text-stone-900">Ghee Roast Chicken Bowl</div>
+<div class="font-medium text-stone-900">Thai Basil Rice</div>
+<div class="font-medium text-stone-900">Sri Lankan Fish &amp; Chips</div>
+<div class="font-medium text-stone-900">Grilled Fish with Herb Butter</div>
+<div class="font-medium text-stone-900">Prawn Sticky Rice Risotto</div>
+<div class="font-medium text-stone-900">Loaded Parotta Plate</div>
+<div class="font-medium text-stone-900">Make Your Own Pasta</div>
+</div>
+</div>
+<!-- Comfort Corner -->
+<div class="menu-section-group" data-group="mains" id="modal-cat-comfort">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Comfort Corner</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">Thai Curry Rice Bowl</div>
+<div class="font-medium text-stone-900">Fried Rice &amp; Hot Garlic Sauce</div>
+</div>
+</div>
+<!-- Desserts -->
+<div class="menu-section-group" data-group="desserts" id="modal-cat-desserts">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Desserts</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">Dark Chocolate Curry Leaf Mousse</div>
+<div class="font-medium text-stone-900">Coconut Panna Cotta</div>
+<div class="font-medium text-stone-900">Baked Yoghurt Pot</div>
+<div class="font-medium text-stone-900">Tahini Caramel Cheesecake</div>
+<div class="font-medium text-stone-900">Lemon, White Chocolate &amp; Mascarpone Mousse</div>
+</div>
+</div>
+<!-- Coffee Classics -->
+<div class="menu-section-group" data-group="coffee" id="modal-cat-coffee-classics">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Coffee Classics</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">ESPRESSO</div>
+<div class="font-medium text-stone-900">FLAT WHITE</div>
+<div class="font-medium text-stone-900">AMERICANO</div>
+<div class="font-medium text-stone-900">CORTADO</div>
+<div class="font-medium text-stone-900">CAFÉ LATTE</div>
+<div class="font-medium text-stone-900">CAPPUCCINO</div>
+<div class="font-medium text-stone-900">CHOCO BONBON SHOT</div>
+<div class="font-medium text-stone-900">CAFÉ MOCHA</div>
+<div class="font-medium text-stone-900">CALLIBAUT CLASSIC HOT CHOCOLATE</div>
+<div class="font-medium text-stone-900">CLASSIC COLD COFFEE</div>
+<div class="font-medium text-stone-900">SPANISH LATTE</div>
+<div class="font-medium text-stone-900">AFFOGATO</div>
+<div class="font-medium text-stone-900">IRISH COFFEE</div>
+<div class="font-medium text-stone-900">FILTER COFFEE</div>
+</div>
+</div>
+<!-- Krafted Coffee Specials -->
+<div class="menu-section-group" data-group="coffee" id="modal-cat-coffee-specials">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Krafted Coffee Specials</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">COCONUT ESPRESSO COOLER</div>
+<div class="font-medium text-stone-900">COCONUT CREAM LATTE</div>
+<div class="font-medium text-stone-900">BANANA BREAD LATTE</div>
+<div class="font-medium text-stone-900">PEANUT BUTTER LATTE</div>
+<div class="font-medium text-stone-900">VIETNAMESE ICED FILTER COFFEE</div>
+<div class="font-medium text-stone-900">NUTELLA COLD COFFEE</div>
+<div class="font-medium text-stone-900">OVALTINE COLD COFFEE</div>
+</div>
+</div>
+<!-- Krafted Iced Teas -->
+<div class="menu-section-group" data-group="coffee" id="modal-cat-iced-teas">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Krafted Iced Teas</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">BASIL ICED TEA</div>
+<div class="font-medium text-stone-900">PECH ICED TEA</div>
+<div class="font-medium text-stone-900">HAZELNUT ICED TEA</div>
+<div class="font-medium text-stone-900">ROSEMARY ICED TEA</div>
+<div class="font-medium text-stone-900">PASSIONFRUIT ICED TEA</div>
+<div class="font-medium text-stone-900">KRAFT SIGNATURE ICED TEA</div>
+</div>
+</div>
+<!-- TBT Signatures -->
+<div class="menu-section-group" data-group="coffee" id="modal-cat-signatures">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">TBT Signatures</h4>
+<div class="text-xs text-stone-400 italic">Seasonal specials rotating weekly.</div>
+</div>
+<!-- Fresh From Farm -->
+<div class="menu-section-group" data-group="beverages" id="modal-cat-fresh-farm">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Fresh From Farm</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">TENDER COCONUT BLOSSOM</div>
+<div class="font-medium text-stone-900">CINDERELLA</div>
+<div class="font-medium text-stone-900">PICO DA PINEAPPLE</div>
+<div class="font-medium text-stone-900">WATERMELON BLOSSOM</div>
+<div class="font-medium text-stone-900">CLASSIC MOJITO</div>
+<div class="font-medium text-stone-900">KRAFT SIGNATURE OF THE WEEK</div>
+</div>
+</div>
+<!-- Thickshakes -->
+<div class="menu-section-group" data-group="beverages" id="modal-cat-thickshakes">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Thickshakes</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">MILO OVERLOAD</div>
+<div class="font-medium text-stone-900">LOTUS BISCOFF SHAKE</div>
+</div>
+</div>
+<!-- Matcha Corner -->
+<div class="menu-section-group" data-group="beverages" id="modal-cat-matcha">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Matcha Corner</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">MATCHA</div>
+<div class="font-medium text-stone-900">BERRY MATCHA</div>
+</div>
+</div>
+<!-- Classic Smoothie -->
+<div class="menu-section-group" data-group="beverages" id="modal-cat-smoothies">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Classic Smoothie</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">ORANGE SMOOTHIE</div>
+<div class="font-medium text-stone-900">STRAWBERRY SMOOTHIE</div>
+<div class="font-medium text-stone-900">BLUEBERRY SMOOTHIE</div>
+<div class="font-medium text-stone-900">POMEGRANATE SMOOTHIE</div>
+<div class="font-medium text-stone-900">KRAFT SIGNATURE</div>
+</div>
+</div>
+<!-- Aerated Drinks -->
+<div class="menu-section-group" data-group="beverages" id="modal-cat-aerated">
+<h4 class="font-serif text-xl text-brand-charcoal border-b border-stone-200 pb-2 mb-4">Aerated Drinks</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="font-medium text-stone-900">SODA</div>
+<div class="font-medium text-stone-900">GINGER ALE</div>
+<div class="font-medium text-stone-900">TONIC WATER</div>
+<div class="font-medium text-stone-900">COKE ZERO</div>
+<div class="font-medium text-stone-900">WATER BOTTLE</div>
+</div>
+</div></div>
+<!-- Modal Footer -->
+<div class="px-6 sm:px-10 py-4 bg-[#F5F2ED] border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+</div>
+</div>
+</div>
+<!-- ======================================================== -->
+<!-- INTERACTIVE MODAL: Image Lightbox                        -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- PRODUCTION JAVASCRIPT LOGIC                              -->
+<!-- ======================================================== -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Sticky Navigation & Active Section Highlighting
+  const header = document.getElementById('main-header');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      header.classList.add('shadow-md', 'bg-[#FAF8F5]/95');
+      header.classList.remove('bg-[#FAF8F5]/90');
+    } else {
+      header.classList.remove('shadow-md');
+      header.classList.add('bg-[#FAF8F5]/90');
+    }
+
+    // Active Section Detection
+    let currentId = '';
+    sections.forEach((sec) => {
+      const top = sec.offsetTop - 120;
+      const height = sec.offsetHeight;
+      if (window.scrollY >= top && window.scrollY < top + height) {
+        currentId = sec.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach((link) => {
+      if (link.getAttribute('href') === `#${currentId}`) {
+        link.classList.add('text-brand-olive', 'font-semibold');
+      } else {
+        link.classList.remove('text-brand-olive', 'font-semibold');
+      }
+    });
+  });
+
+  // 2. Mobile Hamburger Toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileNavMenu = document.getElementById('mobile-nav-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  function toggleMobileMenu(isOpen) {
+    const willOpen = isOpen !== undefined ? isOpen : mobileNavMenu.classList.contains('hidden');
+    if (willOpen) {
+      mobileNavMenu.classList.remove('hidden');
+      hamburgerIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    } else {
+      mobileNavMenu.classList.add('hidden');
+      hamburgerIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  mobileMenuBtn.addEventListener('click', () => toggleMobileMenu());
+
+  // Close mobile nav when clicking any link
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener('click', () => toggleMobileMenu(false));
+  });
+
+  // 3. Scroll Reveal with IntersectionObserver
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach((el) => observer.observe(el));
+  } else {
+    // Fallback if IntersectionObserver not supported
+    revealElements.forEach((el) => el.classList.add('revealed'));
+  }
+
+  // 4. Menu Modal Open/Close & Tabs Navigation
+  const openMenuBtn = document.getElementById('open-menu-modal');
+  const menuModal = document.getElementById('menu-modal');
+  const closeMenuBtn = document.getElementById('close-menu-modal');
+  const menuTabs = document.querySelectorAll('.menu-tab');
+  const modalScrollContainer = document.getElementById('modal-content-container');
+
+  function openMenu() {
+    menuModal.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeMenu() {
+    menuModal.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  if (openMenuBtn) openMenuBtn.addEventListener('click', openMenu);
+  if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+
+  menuModal.addEventListener('click', (e) => {
+    if (e.target === menuModal) closeMenu();
+  });
+
+  // Dedicated function for scrolling inside the modal
+  function scrollToModalCategory(targetId, activeTabElement) {
+    if (!modalScrollContainer) return;
+
+    // Update active tab styles
+    menuTabs.forEach((tab) => {
+      tab.classList.remove('text-brand-olive', 'border-b-2', 'border-brand-olive');
+      tab.classList.add('text-stone-500');
+    });
+
+    if (activeTabElement) {
+      activeTabElement.classList.add('text-brand-olive', 'border-b-2', 'border-brand-olive');
+      activeTabElement.classList.remove('text-stone-500');
+      // Keep active tab visible in the horizontal tab bar
+      activeTabElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
+    if (targetId === 'modal-cat-all') {
+      modalScrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const containerRect = modalScrollContainer.getBoundingClientRect();
+      const targetRect = targetElement.getBoundingClientRect();
+      const targetTop = targetRect.top - containerRect.top + modalScrollContainer.scrollTop - 16;
+      modalScrollContainer.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  // Attach click handlers to category tab buttons
+  menuTabs.forEach((tab) => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const targetId = tab.getAttribute('data-target-id');
+      if (targetId) {
+        scrollToModalCategory(targetId, tab);
+      }
+    });
+  });
+
+  // 5. Gallery Lightbox Functionality
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-image');
+  const closeLightboxBtn = document.getElementById('close-lightbox');
+
+  function showLightbox(src) {
+    if (!src || !lightboxModal || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxModal.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function hideLightbox() {
+    if (!lightboxModal) return;
+    lightboxModal.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  galleryItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      const src = item.getAttribute('data-src') || item.querySelector('img')?.src;
+      showLightbox(src);
+    });
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const src = item.getAttribute('data-src') || item.querySelector('img')?.src;
+        showLightbox(src);
+      }
+    });
+  });
+
+  if (closeLightboxBtn) closeLightboxBtn.addEventListener('click', hideLightbox);
+
+  if (lightboxModal) {
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal || e.target.classList.contains('backdrop-blur-sm') || !e.target.closest('#lightbox-image')) {
+        hideLightbox();
+      }
+    });
+  }
+
+  // 6. Keyboard accessibility: ESC key close for all modals
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (lightboxModal && !lightboxModal.classList.contains('hidden')) {
+        hideLightbox();
+      }
+      if (!menuModal.classList.contains('hidden')) {
+        closeMenu();
+      }
+      if (!mobileNavMenu.classList.contains('hidden')) {
+        toggleMobileMenu(false);
+      }
+    }
+  });
+});
+</script>
+</body></html>
